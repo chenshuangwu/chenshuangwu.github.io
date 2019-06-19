@@ -6,7 +6,7 @@ title: watch与computed
 ## watch
 
 ### watch
-
+当需要在数据变化时执行异步或开销较大的操作时，使用watch是最有用的。
 ``` javascript
 watch:{
   test(newVal, oldVal){
