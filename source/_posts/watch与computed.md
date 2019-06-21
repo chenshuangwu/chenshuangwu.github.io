@@ -1,6 +1,8 @@
 ---
 title: watch与computed
 date: 2019/6/19 20:46:25
+tags:
+- vue
 ---
 
 
@@ -26,4 +28,22 @@ watch: {
     console.log(newVal)
   }
 }
+```
+
+## computed
+
+```javascript
+data(){
+  return {
+    name: 'nickname'
+  }
+},
+computed:{
+  // 计算属性的 getter
+  // temp的值随着name的改变而改变
+  temp(){
+    return 'temp' + this.name
+  }
+}
+
 ```
