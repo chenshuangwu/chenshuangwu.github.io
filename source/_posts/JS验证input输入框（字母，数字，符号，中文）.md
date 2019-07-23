@@ -27,7 +27,7 @@ tags: js
     onafterpaste="this.value=this.value.replace(/\D/g,'')">
  ```
 
- 
+ <!--more-->
 
 只能输入数字，小数点：
 ```html

@@ -1,6 +1,6 @@
 ---
 layout: '''vue'
-title: vue自定义指令实现v-loading'
+title: vue自定义指令实现v-loading
 date: 2019-06-24 18:48:18
 tags: vue 
 ---
@@ -61,6 +61,7 @@ Vue.directive('loading', {
   }
 })
 ```
+<!--more-->
 
 新建样式文件_loading.scss
 ```scss

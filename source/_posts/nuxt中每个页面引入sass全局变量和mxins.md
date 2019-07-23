@@ -1,5 +1,5 @@
 ---
-title: '''nuxt中每个页面引入sass全局变量和mxins'''
+title: nuxt中每个页面引入sass全局变量和mxins
 date: 2019-07-03 14:13:34
 tags: nuxt
 ---
