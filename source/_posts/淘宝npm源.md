@@ -1,7 +1,7 @@
 ---
 title: 淘宝npm镜像
 date: 2019-07-06 21:18:57
-tags:
+tags: npm
 ---
 
 ## 使用淘宝npm镜像

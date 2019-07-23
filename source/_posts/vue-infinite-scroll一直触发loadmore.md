@@ -1,7 +1,7 @@
 ---
 title: vue-infinite-scroll一直触发loadmore
 date: 2019-07-11 18:35:57
-tags:
+tags: vue
 ---
 ## 问题
 在使用vue-infinite-scroll组件的时候遇到一直触发loadmore的问题，无论infinite-scroll-distance设置多大，都会一直触发

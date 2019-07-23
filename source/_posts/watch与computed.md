@@ -30,6 +30,9 @@ watch: {
 }
 ```
 
+
+
+
 ## computed
 
 ```javascript
@@ -44,6 +47,43 @@ computed:{
   temp(){
     return 'temp' + this.name
   }
+}
+
+```
+
+## 组合使用，只监听某个对象的某个属性
+
+现在有个banner_info对象，有时候只想监听某个属性（如object_type），可以使用computed和watch来达到目的
+```javascript
+data(){
+  return {
+    banner_info: {
+        location: "",
+        previewImg: "",
+        cover: "",
+        object_type: "",
+        object_id: "",
+        url: "",
+        start_at: "",
+        end_at: "",
+        status: "",
+        note: "",
+        order_number: "",
+        os: "",
+        title: "",
+      }
+  }
+},
+
+computed:{
+    type(){
+      return this.banner_info.object_type
+    }
+  },
+
+watch:{
+  type(newVal, oldVal){
+      // do something
 }
 
 ```
