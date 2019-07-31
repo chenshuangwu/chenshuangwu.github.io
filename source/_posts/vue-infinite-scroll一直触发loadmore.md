@@ -6,6 +6,7 @@ tags: vue
 ## 问题
 在使用vue-infinite-scroll组件的时候遇到一直触发loadmore的问题，无论infinite-scroll-distance设置多大，都会一直触发
 
+当父容器的display为none时，也会一直触发，因为此时高度为0。
 
 ## 解决问题
 需要在使用的标签外面的容器上设置height 或 设置 overflow-y:hidden
