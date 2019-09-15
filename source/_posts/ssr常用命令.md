@@ -1,8 +1,10 @@
 ---
-title: ssr常用命令
+title: ssr常用命令 与锐速常用命令
 date: 2019-08-07 10:40:38
 tags: ssr
 ---
+
+## ssr
 
 - 启动
   
@@ -66,3 +68,15 @@ tags: ssr
   service iptables stop chkconfig iptables off
   ```
 
+## 锐速
+- 重启锐速：
+
+/serverspeeder/bin/serverSpeeder.sh restart
+
+- 锐速状态：
+
+/serverspeeder/bin/serverSpeeder.sh status
+
+- 卸载锐速：
+
+chattr -i /serverspeeder/etc/apx* && /serverspeeder/bin/serverSpeeder.sh uninstall -f
