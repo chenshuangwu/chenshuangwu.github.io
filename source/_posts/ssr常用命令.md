@@ -6,6 +6,9 @@ tags: ssr
 
 ## ssr
 
+- 卸载
+bash shasowshocksR.sh uninstall
+
 - 启动
   
   /etc/init.d/shadowsocks start
