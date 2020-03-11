@@ -1,8 +1,17 @@
 ---
-title: '''vue内div模拟textarea，文本内敏感字显示高亮'''
+title: 'vue内div模拟textarea，文本内敏感字显示高亮'
 date: 2020-03-06 14:49:30
 tags: HTML、JS
 ---
+
+手动调整 div 元素的高度：
+```css
+div
+{
+resize:both;
+overflow:auto;
+}
+```
 
 ```html
 <div ref="textarea" class="textarea-test" contenteditable='true' @keydown="keydown"></div>
