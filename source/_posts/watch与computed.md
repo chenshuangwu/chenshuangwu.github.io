@@ -22,11 +22,14 @@ watch:{
 
 ``` javascript
 watch: {
-  immediate: true,
-  deep: true,
-  test: handler(newVal, oldVal){
-    console.log(newVal)
-  }
+
+  test: {
+    immediate: true,
+    deep: true,
+    handler(newVal, oldVal){
+      console.log(newVal)
+    }
+  } 
 }
 ```
 
