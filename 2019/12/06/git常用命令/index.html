@@ -1,23 +1,744 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
+<link rel="stylesheet" href="/css/main.css">
 
-{% block page_class %}page-post-detail{% endblock %}
 
-{% block content %}
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.chensw.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="命令 含义    git init 初始化本地 git 仓库（创建新仓库）   git config –global user.name “xxx” 配置用户名   git config –global user.email “xxx@xxx.com“ 配置邮件   git config –global color.ui true git status 等命令自动着色   git confi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git常用命令">
+<meta property="og:url" content="https://www.chensw.top/2019/12/06/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="琴客的个人博客">
+<meta property="og:description" content="命令 含义    git init 初始化本地 git 仓库（创建新仓库）   git config –global user.name “xxx” 配置用户名   git config –global user.email “xxx@xxx.com“ 配置邮件   git config –global color.ui true git status 等命令自动着色   git confi">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-06T08:27:52.000Z">
+<meta property="article:modified_time" content="2021-03-18T02:22:04.482Z">
+<meta property="article:author" content="琴客">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://www.chensw.top/2019/12/06/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>git常用命令 | 琴客的个人博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">琴客的个人博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/12/06/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          git常用命令
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-06 16:27:52" itemprop="dateCreated datePublished" datetime="2019-12-06T16:27:52+08:00">2019-12-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>git init</td>
+<td>初始化本地 git 仓库（创建新仓库）</td>
+</tr>
+<tr>
+<td>git config –global user.name “xxx”</td>
+<td>配置用户名</td>
+</tr>
+<tr>
+<td>git config –global user.email “<a href="mailto:xxx@xxx.com">xxx@xxx.com</a>“</td>
+<td>配置邮件</td>
+</tr>
+<tr>
+<td>git config –global color.ui true</td>
+<td>git status 等命令自动着色</td>
+</tr>
+<tr>
+<td>git config –global color.status auto</td>
+<td></td>
+</tr>
+<tr>
+<td>git config –global color.diff auto</td>
+<td></td>
+</tr>
+<tr>
+<td>git config –global color.diff auto</td>
+<td></td>
+</tr>
+<tr>
+<td>git config –global color.branch auto</td>
+<td></td>
+</tr>
+<tr>
+<td>git config –global color.interactive auto</td>
+<td></td>
+</tr>
+<tr>
+<td>git config –global –unset http.proxy</td>
+<td>remove proxy configuration on git</td>
+</tr>
+<tr>
+<td>git clone git+ssh://git@192.168.53.168/VT.git</td>
+<td>clone 远程仓库</td>
+</tr>
+<tr>
+<td>git status</td>
+<td>查看当前版本状态（是否修改）</td>
+</tr>
+<tr>
+<td>git add xyz</td>
+<td>添加 xyz 文件至 index</td>
+</tr>
+<tr>
+<td>git add .</td>
+<td>增加当前子目录下所有更改过的文件至 index</td>
+</tr>
+<tr>
+<td>git commit -m ‘xxx’</td>
+<td>提交</td>
+</tr>
+<tr>
+<td>git commit –amend -m ‘xxx’</td>
+<td>合并上一次提交（用于反复修改）</td>
+</tr>
+<tr>
+<td>git commit -am ‘xxx’</td>
+<td>将 add 和 commit 合为一步</td>
+</tr>
+<tr>
+<td>git rm xxx</td>
+<td>删除 index 中的文件</td>
+</tr>
+<tr>
+<td>git rm -r *</td>
+<td>递归删除</td>
+</tr>
+<tr>
+<td>git log</td>
+<td>显示提交日志</td>
+</tr>
+<tr>
+<td>git log -1</td>
+<td>显示 1 行日志 -n 为 n 行</td>
+</tr>
+<tr>
+<td>git log -5</td>
+<td></td>
+</tr>
+<tr>
+<td>git log –stat</td>
+<td>显示提交日志及相关变动文件</td>
+</tr>
+<tr>
+<td>git log -p -m</td>
+<td></td>
+</tr>
+<tr>
+<td>git show dfb02e6e4f2f7b573337763e5c0013802e392818</td>
+<td>显示某个提交的详细内容</td>
+</tr>
+<tr>
+<td>git show dfb02</td>
+<td>可只用 commitid 的前几位</td>
+</tr>
+<tr>
+<td>git show HEAD</td>
+<td>显示 HEAD 提交日志</td>
+</tr>
+<tr>
+<td>git show HEAD^</td>
+<td>显示 HEAD 的父（上一个版本）的提交日志 ^^为上两个版本 ^5 为上 5 个版本</td>
+</tr>
+<tr>
+<td>git tag</td>
+<td>显示已存在的 tag</td>
+</tr>
+<tr>
+<td>git tag -a v2.0 -m ‘xxx’</td>
+<td>增加 v2.0 的 tag</td>
+</tr>
+<tr>
+<td>git show v2.0</td>
+<td>显示 v2.0 的日志及详细内容</td>
+</tr>
+<tr>
+<td>git log v2.0</td>
+<td>显示 v2.0 的日志</td>
+</tr>
+<tr>
+<td>git diff</td>
+<td>显示所有未添加至 index 的变更</td>
+</tr>
+<tr>
+<td>git diff –cached</td>
+<td>显示所有已添加 index 但还未 commit 的变更</td>
+</tr>
+<tr>
+<td>git diff HEAD^</td>
+<td>比较与上一个版本的差异</td>
+</tr>
+<tr>
+<td>git diff HEAD – ./lib</td>
+<td>比较与 HEAD 版本 lib 目录的差异</td>
+</tr>
+<tr>
+<td>git diff origin/master..master</td>
+<td>比较远程分支 master 上有本地分支 master 上没有的</td>
+</tr>
+<tr>
+<td>git diff origin/master..master –stat</td>
+<td>只显示差异的文件，不显示具体内容</td>
+</tr>
+<tr>
+<td>git remote add origin git+ssh://git@192.168.53.168/VT.git</td>
+<td>增加远程定义（用于 push/pull/fetch）</td>
+</tr>
+<tr>
+<td>git branch</td>
+<td>显示本地分支</td>
+</tr>
+<tr>
+<td>git branch –contains 50089</td>
+<td>显示包含提交 50089 的分支</td>
+</tr>
+<tr>
+<td>git branch -a</td>
+<td>显示所有分支</td>
+</tr>
+<tr>
+<td>git branch -r</td>
+<td>显示所有远程分支</td>
+</tr>
+<tr>
+<td>git branch –merged</td>
+<td>显示所有已合并到当前分支的分支</td>
+</tr>
+<tr>
+<td>git branch –no-merged</td>
+<td>显示所有未合并到当前分支的分支</td>
+</tr>
+<tr>
+<td>git branch -m master master_copy</td>
+<td>本地分支改名</td>
+</tr>
+<tr>
+<td>git checkout -b master_copy</td>
+<td>从当前分支创建新分支 master_copy 并检出</td>
+</tr>
+<tr>
+<td>git checkout -b master master_copy</td>
+<td>上面的完整版</td>
+</tr>
+<tr>
+<td>git checkout features/performance</td>
+<td>检出已存在的 features/performance 分支</td>
+</tr>
+<tr>
+<td>git checkout –track hotfixes/BJVEP933</td>
+<td>检出远程分支 hotfixes/BJVEP933 并创建本地跟踪分支</td>
+</tr>
+<tr>
+<td>git checkout v2.0</td>
+<td>检出版本 v2.0</td>
+</tr>
+<tr>
+<td>git checkout -b devel origin/develop</td>
+<td>从远程分支 develop 创建新本地分支 devel 并检出</td>
+</tr>
+<tr>
+<td>git checkout – README</td>
+<td>检出 head 版本的 README 文件（可用于修改错误回退）</td>
+</tr>
+<tr>
+<td>git merge origin/master</td>
+<td>合并远程 master 分支至当前分支</td>
+</tr>
+<tr>
+<td>git cherry-pick ff44785404a8e</td>
+<td>合并提交 ff44785404a8e 的修改</td>
+</tr>
+<tr>
+<td>git push origin master</td>
+<td>将当前分支 push 到远程 master 分支</td>
+</tr>
+<tr>
+<td>git push origin :hotfixes/BJVEP933</td>
+<td>删除远程仓库的 hotfixes/BJVEP933 分支</td>
+</tr>
+<tr>
+<td>git push –tags</td>
+<td>把所有 tag 推送到远程仓库</td>
+</tr>
+<tr>
+<td>git fetch</td>
+<td>获取所有远程分支（不更新本地分支，另需 merge）</td>
+</tr>
+<tr>
+<td>git fetch –prune</td>
+<td>获取所有远程分支并清除服务器上已删掉的分支</td>
+</tr>
+<tr>
+<td>git pull origin master</td>
+<td>获取远程分支 master 并 merge 到当前分支</td>
+</tr>
+<tr>
+<td>git mv README README2</td>
+<td>重命名文件 README 为 README2</td>
+</tr>
+<tr>
+<td>git reset –hard HEAD</td>
+<td>将当前版本重置为 HEAD（通常用于 merge 失败回退）</td>
+</tr>
+<tr>
+<td>git rebase</td>
+<td>将分叉的分支重新合并</td>
+</tr>
+<tr>
+<td>git branch -d hotfixes/BJVEP933</td>
+<td>删除分支 hotfixes/BJVEP933（本分支修改已合并到其他分支）</td>
+</tr>
+<tr>
+<td>git branch -D hotfixes/BJVEP933</td>
+<td>强制删除分支 hotfixes/BJVEP933</td>
+</tr>
+<tr>
+<td>git ls-files</td>
+<td>列出 git index 包含的文件</td>
+</tr>
+<tr>
+<td>git show-branch</td>
+<td>图示当前分支历史</td>
+</tr>
+<tr>
+<td>git show-branch –all</td>
+<td>图示所有分支历史</td>
+</tr>
+<tr>
+<td>git whatchanged</td>
+<td>显示提交历史对应的文件修改</td>
+</tr>
+<tr>
+<td>git revert dfb02e6e4f2f7b573337763e5c0013802e392818</td>
+<td>撤销提交 dfb02e6e4f2f7b573337763e5c0013802e392818</td>
+</tr>
+<tr>
+<td>git ls-tree HEAD</td>
+<td>内部命令：显示某个 git 对象</td>
+</tr>
+<tr>
+<td>git rev-parse v2.0</td>
+<td>内部命令：显示某个 ref 对于的 SHA1 HASH</td>
+</tr>
+<tr>
+<td>git reflog</td>
+<td>显示所有提交，包括孤立节点</td>
+</tr>
+<tr>
+<td>git show HEAD@{5}</td>
+<td></td>
+</tr>
+<tr>
+<td>git show master@{yesterday}</td>
+<td>显示 master 分支昨天的状态</td>
+</tr>
+<tr>
+<td>git log –pretty=format:’%h %s’ –graph</td>
+<td>图示提交日志</td>
+</tr>
+<tr>
+<td>git show HEAD~3</td>
+<td></td>
+</tr>
+<tr>
+<td>git show -s –pretty=raw 2be7fcb476</td>
+<td></td>
+</tr>
+<tr>
+<td>git stash</td>
+<td>暂存当前修改，将所有至为 HEAD 状态</td>
+</tr>
+<tr>
+<td>git stash list</td>
+<td>查看所有暂存</td>
+</tr>
+<tr>
+<td>git stash show -p stash@{0}</td>
+<td>参考第一次暂存</td>
+</tr>
+<tr>
+<td>git stash apply stash@{0}</td>
+<td>应用第一次暂存</td>
+</tr>
+<tr>
+<td>git grep “delete from”</td>
+<td>文件中搜索文本“delete from”</td>
+</tr>
+<tr>
+<td>git grep -e ‘#define’ –and -e SORT_DIRENT</td>
+<td></td>
+</tr>
+<tr>
+<td>git gc</td>
+<td>清理不必要的文件并优化本地存储库</td>
+</tr>
+<tr>
+<td>git fsck</td>
+<td>一致性检查</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/git/" rel="tag"># git</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/10/29/nuxt%E5%BC%95%E7%94%A8%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8Ajs%E4%BB%A3%E7%A0%81/" rel="prev" title="nuxt引用谷歌广告js代码">
+      <i class="fa fa-chevron-left"></i> nuxt引用谷歌广告js代码
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/06/nuxt-js%E5%8F%8B%E7%9B%9F%E7%BB%9F%E8%AE%A1/" rel="next" title="nuxt.js友盟统计">
+      nuxt.js友盟统计 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">琴客</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">琴客</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

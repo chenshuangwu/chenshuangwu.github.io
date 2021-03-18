@@ -1,23 +1,1431 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block title %}{{ title }}{% if theme.index_with_subtitle and subtitle %} – {{ subtitle }}{% endif %}{% endblock %}
+<link rel="stylesheet" href="/css/main.css">
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
 
-{% block content %}
-  <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
-  </section>
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.chensw.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+  <meta property="og:type" content="website">
+<meta property="og:title" content="琴客的个人博客">
+<meta property="og:url" content="https://www.chensw.top/page/2/index.html">
+<meta property="og:site_name" content="琴客的个人博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="琴客">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://www.chensw.top/page/2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>琴客的个人博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">琴客的个人博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2020/01/06/nuxt-js%E5%8F%8B%E7%9B%9F%E7%BB%9F%E8%AE%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/06/nuxt-js%E5%8F%8B%E7%9B%9F%E7%BB%9F%E8%AE%A1/" class="post-title-link" itemprop="url">nuxt.js友盟统计</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-06 10:13:14" itemprop="dateCreated datePublished" datetime="2020-01-06T10:13:14+08:00">2020-01-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>转载至 <a target="_blank" rel="noopener" href="https://www.kpromise.top/">全栈之旅</a> &gt; <a target="_blank" rel="noopener" href="https://www.kpromise.top/add-umeng-for-nuxt-js/">umeng nuxt.js 站长统计 - add umeng analytics for nuxt.js</a></p>
+</blockquote>
+<p>nuxt.js 最大的特性是服务端渲染，那么，这种情况下，我们如何添加 umeng 统计呢，并如何隐藏那个站长统计呢，虽然 nuxt.js 是服务端渲染，但同样允许你在客户端渲染，此外，使用 display:none 可能会被搜索引擎惩罚，觉得你是作弊行为。</p>
+<p>我们知道 nuxt.config.js 有个 ssr 选项选项，你设置为 false 将在客户端渲染了，那么，我们先看看如何添加 umeng 统计吧。</p>
+<h2 id="nuxt-js-添加-umeng-统计"><a href="#nuxt-js-添加-umeng-统计" class="headerlink" title="nuxt.js 添加 umeng 统计"></a>nuxt.js 添加 umeng 统计</h2><p>1、在 static 目录新建 cnzz.js，static 目录在你部署后其实就是根目录，这里你可以存 robots.txt 我们先建 cnzz.js 把，并键入：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> siteId = <span class="string">&#x27;1273976960&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> cnzz_tag = <span class="built_in">document</span>.createElement(<span class="string">&quot;script&quot;</span>);</span><br><span class="line">cnzz_tag.type = <span class="string">&quot;text/javascript&quot;</span>;</span><br><span class="line">cnzz_tag.charset = <span class="string">&quot;utf-8&quot;</span>;</span><br><span class="line">cnzz_tag.src = <span class="string">&quot;https://s13.cnzz.com/z_stat.php?web_id=&quot;</span> + siteId;</span><br><span class="line"><span class="keyword">var</span> root = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&quot;script&quot;</span>)[<span class="number">0</span>];</span><br><span class="line">root.parentNode.insertBefore(cnzz_tag, root);</span><br></pre></td></tr></table></figure>
+
+<p>2、在 nuxt.config.js 里引用这个 js 文件，最终的文件可以参考：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">   ** Headers of the page</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  head: &#123;</span><br><span class="line">    title: <span class="string">&#x27;xxx&#x27;</span>,</span><br><span class="line">    meta: [</span><br><span class="line">    ],</span><br><span class="line">    link: [</span><br><span class="line">    ],</span><br><span class="line">    script: [&#123;</span><br><span class="line">        src: <span class="string">&#x27;/cnzz.js&#x27;</span>,</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<p>但是问题来了，每次打开网页，如果网速慢总有一个 站长统计，就不能去掉吗？可以的，比如 display:none 但是这种做法搜索引擎可能会觉得你存在隐瞒，会被惩罚，当然这是我听来的，没有实践过，但想想也有道理。</p>
+<h2 id="合理去掉站长统计"><a href="#合理去掉站长统计" class="headerlink" title="合理去掉站长统计"></a>合理去掉站长统计</h2><p>如上，我已经说了，第一种：display：none如果对seo没有太苛刻要求，是可以的。但我要说的是第二种，具体请看：<a target="_blank" rel="noopener" href="https://developer.umeng.com/docs/67963/detail/68646">https://developer.umeng.com/docs/67963/detail/68646</a></p>
+<p>umeng 允许我们使用异步的方式加载，但是异步的方式不提供 显示统计图标。划重点了哦。另外，图片上的代码我已经复制，如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> siteId = <span class="string">&#x27;xxxxx&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> cnzz_tag = <span class="built_in">document</span>.createElement(<span class="string">&quot;script&quot;</span>);</span><br><span class="line">cnzz_tag.type = <span class="string">&quot;text/javascript&quot;</span>;</span><br><span class="line">cnzz_tag.async = <span class="string">&quot;true&quot;</span>;</span><br><span class="line">cnzz_tag.charset = <span class="string">&quot;utf-8&quot;</span>;</span><br><span class="line">cnzz_tag.src = <span class="string">&quot;https://w.cnzz.com/c.php?async=1&amp;id=&quot;</span> + siteId;</span><br><span class="line"><span class="keyword">var</span> root = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&quot;script&quot;</span>)[<span class="number">0</span>];</span><br><span class="line">root.parentNode.insertBefore(cnzz_tag, root);</span><br></pre></td></tr></table></figure>
+<p>把 siteId 改为你自己的即可，另外，你可能觉得奇怪，为啥用 + 而不是 `` 比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnzz_tag.src = <span class="string">`https://w.cnzz.com/c.php?async=1&amp;id=<span class="subst">$&#123;siteId&#125;</span>`</span>;</span><br></pre></td></tr></table></figure>
+<p>这种方式是可以，但是请考虑下 IE11 吧，不兼容！</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/12/06/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/06/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">git常用命令</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-06 16:27:52" itemprop="dateCreated datePublished" datetime="2019-12-06T16:27:52+08:00">2019-12-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>git init</td>
+<td>初始化本地 git 仓库（创建新仓库）</td>
+</tr>
+<tr>
+<td>git config –global user.name “xxx”</td>
+<td>配置用户名</td>
+</tr>
+<tr>
+<td>git config –global user.email “<a href="mailto:xxx@xxx.com">xxx@xxx.com</a>“</td>
+<td>配置邮件</td>
+</tr>
+<tr>
+<td>git config –global color.ui true</td>
+<td>git status 等命令自动着色</td>
+</tr>
+<tr>
+<td>git config –global color.status auto</td>
+<td></td>
+</tr>
+<tr>
+<td>git config –global color.diff auto</td>
+<td></td>
+</tr>
+<tr>
+<td>git config –global color.diff auto</td>
+<td></td>
+</tr>
+<tr>
+<td>git config –global color.branch auto</td>
+<td></td>
+</tr>
+<tr>
+<td>git config –global color.interactive auto</td>
+<td></td>
+</tr>
+<tr>
+<td>git config –global –unset http.proxy</td>
+<td>remove proxy configuration on git</td>
+</tr>
+<tr>
+<td>git clone git+ssh://git@192.168.53.168/VT.git</td>
+<td>clone 远程仓库</td>
+</tr>
+<tr>
+<td>git status</td>
+<td>查看当前版本状态（是否修改）</td>
+</tr>
+<tr>
+<td>git add xyz</td>
+<td>添加 xyz 文件至 index</td>
+</tr>
+<tr>
+<td>git add .</td>
+<td>增加当前子目录下所有更改过的文件至 index</td>
+</tr>
+<tr>
+<td>git commit -m ‘xxx’</td>
+<td>提交</td>
+</tr>
+<tr>
+<td>git commit –amend -m ‘xxx’</td>
+<td>合并上一次提交（用于反复修改）</td>
+</tr>
+<tr>
+<td>git commit -am ‘xxx’</td>
+<td>将 add 和 commit 合为一步</td>
+</tr>
+<tr>
+<td>git rm xxx</td>
+<td>删除 index 中的文件</td>
+</tr>
+<tr>
+<td>git rm -r *</td>
+<td>递归删除</td>
+</tr>
+<tr>
+<td>git log</td>
+<td>显示提交日志</td>
+</tr>
+<tr>
+<td>git log -1</td>
+<td>显示 1 行日志 -n 为 n 行</td>
+</tr>
+<tr>
+<td>git log -5</td>
+<td></td>
+</tr>
+<tr>
+<td>git log –stat</td>
+<td>显示提交日志及相关变动文件</td>
+</tr>
+<tr>
+<td>git log -p -m</td>
+<td></td>
+</tr>
+<tr>
+<td>git show dfb02e6e4f2f7b573337763e5c0013802e392818</td>
+<td>显示某个提交的详细内容</td>
+</tr>
+<tr>
+<td>git show dfb02</td>
+<td>可只用 commitid 的前几位</td>
+</tr>
+<tr>
+<td>git show HEAD</td>
+<td>显示 HEAD 提交日志</td>
+</tr>
+<tr>
+<td>git show HEAD^</td>
+<td>显示 HEAD 的父（上一个版本）的提交日志 ^^为上两个版本 ^5 为上 5 个版本</td>
+</tr>
+<tr>
+<td>git tag</td>
+<td>显示已存在的 tag</td>
+</tr>
+<tr>
+<td>git tag -a v2.0 -m ‘xxx’</td>
+<td>增加 v2.0 的 tag</td>
+</tr>
+<tr>
+<td>git show v2.0</td>
+<td>显示 v2.0 的日志及详细内容</td>
+</tr>
+<tr>
+<td>git log v2.0</td>
+<td>显示 v2.0 的日志</td>
+</tr>
+<tr>
+<td>git diff</td>
+<td>显示所有未添加至 index 的变更</td>
+</tr>
+<tr>
+<td>git diff –cached</td>
+<td>显示所有已添加 index 但还未 commit 的变更</td>
+</tr>
+<tr>
+<td>git diff HEAD^</td>
+<td>比较与上一个版本的差异</td>
+</tr>
+<tr>
+<td>git diff HEAD – ./lib</td>
+<td>比较与 HEAD 版本 lib 目录的差异</td>
+</tr>
+<tr>
+<td>git diff origin/master..master</td>
+<td>比较远程分支 master 上有本地分支 master 上没有的</td>
+</tr>
+<tr>
+<td>git diff origin/master..master –stat</td>
+<td>只显示差异的文件，不显示具体内容</td>
+</tr>
+<tr>
+<td>git remote add origin git+ssh://git@192.168.53.168/VT.git</td>
+<td>增加远程定义（用于 push/pull/fetch）</td>
+</tr>
+<tr>
+<td>git branch</td>
+<td>显示本地分支</td>
+</tr>
+<tr>
+<td>git branch –contains 50089</td>
+<td>显示包含提交 50089 的分支</td>
+</tr>
+<tr>
+<td>git branch -a</td>
+<td>显示所有分支</td>
+</tr>
+<tr>
+<td>git branch -r</td>
+<td>显示所有远程分支</td>
+</tr>
+<tr>
+<td>git branch –merged</td>
+<td>显示所有已合并到当前分支的分支</td>
+</tr>
+<tr>
+<td>git branch –no-merged</td>
+<td>显示所有未合并到当前分支的分支</td>
+</tr>
+<tr>
+<td>git branch -m master master_copy</td>
+<td>本地分支改名</td>
+</tr>
+<tr>
+<td>git checkout -b master_copy</td>
+<td>从当前分支创建新分支 master_copy 并检出</td>
+</tr>
+<tr>
+<td>git checkout -b master master_copy</td>
+<td>上面的完整版</td>
+</tr>
+<tr>
+<td>git checkout features/performance</td>
+<td>检出已存在的 features/performance 分支</td>
+</tr>
+<tr>
+<td>git checkout –track hotfixes/BJVEP933</td>
+<td>检出远程分支 hotfixes/BJVEP933 并创建本地跟踪分支</td>
+</tr>
+<tr>
+<td>git checkout v2.0</td>
+<td>检出版本 v2.0</td>
+</tr>
+<tr>
+<td>git checkout -b devel origin/develop</td>
+<td>从远程分支 develop 创建新本地分支 devel 并检出</td>
+</tr>
+<tr>
+<td>git checkout – README</td>
+<td>检出 head 版本的 README 文件（可用于修改错误回退）</td>
+</tr>
+<tr>
+<td>git merge origin/master</td>
+<td>合并远程 master 分支至当前分支</td>
+</tr>
+<tr>
+<td>git cherry-pick ff44785404a8e</td>
+<td>合并提交 ff44785404a8e 的修改</td>
+</tr>
+<tr>
+<td>git push origin master</td>
+<td>将当前分支 push 到远程 master 分支</td>
+</tr>
+<tr>
+<td>git push origin :hotfixes/BJVEP933</td>
+<td>删除远程仓库的 hotfixes/BJVEP933 分支</td>
+</tr>
+<tr>
+<td>git push –tags</td>
+<td>把所有 tag 推送到远程仓库</td>
+</tr>
+<tr>
+<td>git fetch</td>
+<td>获取所有远程分支（不更新本地分支，另需 merge）</td>
+</tr>
+<tr>
+<td>git fetch –prune</td>
+<td>获取所有远程分支并清除服务器上已删掉的分支</td>
+</tr>
+<tr>
+<td>git pull origin master</td>
+<td>获取远程分支 master 并 merge 到当前分支</td>
+</tr>
+<tr>
+<td>git mv README README2</td>
+<td>重命名文件 README 为 README2</td>
+</tr>
+<tr>
+<td>git reset –hard HEAD</td>
+<td>将当前版本重置为 HEAD（通常用于 merge 失败回退）</td>
+</tr>
+<tr>
+<td>git rebase</td>
+<td>将分叉的分支重新合并</td>
+</tr>
+<tr>
+<td>git branch -d hotfixes/BJVEP933</td>
+<td>删除分支 hotfixes/BJVEP933（本分支修改已合并到其他分支）</td>
+</tr>
+<tr>
+<td>git branch -D hotfixes/BJVEP933</td>
+<td>强制删除分支 hotfixes/BJVEP933</td>
+</tr>
+<tr>
+<td>git ls-files</td>
+<td>列出 git index 包含的文件</td>
+</tr>
+<tr>
+<td>git show-branch</td>
+<td>图示当前分支历史</td>
+</tr>
+<tr>
+<td>git show-branch –all</td>
+<td>图示所有分支历史</td>
+</tr>
+<tr>
+<td>git whatchanged</td>
+<td>显示提交历史对应的文件修改</td>
+</tr>
+<tr>
+<td>git revert dfb02e6e4f2f7b573337763e5c0013802e392818</td>
+<td>撤销提交 dfb02e6e4f2f7b573337763e5c0013802e392818</td>
+</tr>
+<tr>
+<td>git ls-tree HEAD</td>
+<td>内部命令：显示某个 git 对象</td>
+</tr>
+<tr>
+<td>git rev-parse v2.0</td>
+<td>内部命令：显示某个 ref 对于的 SHA1 HASH</td>
+</tr>
+<tr>
+<td>git reflog</td>
+<td>显示所有提交，包括孤立节点</td>
+</tr>
+<tr>
+<td>git show HEAD@{5}</td>
+<td></td>
+</tr>
+<tr>
+<td>git show master@{yesterday}</td>
+<td>显示 master 分支昨天的状态</td>
+</tr>
+<tr>
+<td>git log –pretty=format:’%h %s’ –graph</td>
+<td>图示提交日志</td>
+</tr>
+<tr>
+<td>git show HEAD~3</td>
+<td></td>
+</tr>
+<tr>
+<td>git show -s –pretty=raw 2be7fcb476</td>
+<td></td>
+</tr>
+<tr>
+<td>git stash</td>
+<td>暂存当前修改，将所有至为 HEAD 状态</td>
+</tr>
+<tr>
+<td>git stash list</td>
+<td>查看所有暂存</td>
+</tr>
+<tr>
+<td>git stash show -p stash@{0}</td>
+<td>参考第一次暂存</td>
+</tr>
+<tr>
+<td>git stash apply stash@{0}</td>
+<td>应用第一次暂存</td>
+</tr>
+<tr>
+<td>git grep “delete from”</td>
+<td>文件中搜索文本“delete from”</td>
+</tr>
+<tr>
+<td>git grep -e ‘#define’ –and -e SORT_DIRENT</td>
+<td></td>
+</tr>
+<tr>
+<td>git gc</td>
+<td>清理不必要的文件并优化本地存储库</td>
+</tr>
+<tr>
+<td>git fsck</td>
+<td>一致性检查</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/10/29/nuxt%E5%BC%95%E7%94%A8%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8Ajs%E4%BB%A3%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/29/nuxt%E5%BC%95%E7%94%A8%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8Ajs%E4%BB%A3%E7%A0%81/" class="post-title-link" itemprop="url">nuxt引用谷歌广告js代码</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-29 17:35:42" itemprop="dateCreated datePublished" datetime="2019-10-29T17:35:42+08:00">2019-10-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="nuxt引用谷歌广告js代码"><a href="#nuxt引用谷歌广告js代码" class="headerlink" title="nuxt引用谷歌广告js代码"></a>nuxt引用谷歌广告js代码</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://chuihu.com/p-8800000294">Nuxt.js引用谷歌广告的JS代码,只配置nuxt.config.js文件就可以!</a></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 这段是谷歌广告要引入的JS代码，这里装在一个字符串变量里xxxxx就是你的ID</span></span><br><span class="line"><span class="keyword">const</span> absbygoogle = <span class="string">&#x27;(adsbygoogle=window.adsbygoogle||[]).push(&#123;google_ad_client:&quot;ca-pub-xxxxx&quot;,enable_page_level_ads:true&#125;);&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  mode: <span class="string">&#x27;universal&#x27;</span>,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  ** Headers of the page</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  head: &#123;</span><br><span class="line">    meta: [</span><br><span class="line">      &#123;<span class="attr">charset</span>: <span class="string">&#x27;UTF-8&#x27;</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">name</span>: <span class="string">&#x27;viewport&#x27;</span>, <span class="attr">content</span>: <span class="string">&#x27;width=device-width, initial-scale=1, shrink-to-fit=no&#x27;</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">httpEquiv</span>: <span class="string">&#x27;Content-Type&#x27;</span>, <span class="attr">content</span>: <span class="string">&#x27;text/html; charset=UTF-8&#x27;</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">httpEquiv</span>: <span class="string">&#x27;content-language&#x27;</span>, <span class="attr">content</span>: <span class="string">&#x27;zh-CN&#x27;</span>&#125;</span><br><span class="line">    ],</span><br><span class="line">    script: [</span><br><span class="line">      <span class="comment">// 这里引入谷歌广告的JS文件，async要为true</span></span><br><span class="line">      &#123;<span class="attr">src</span>: <span class="string">&#x27;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#x27;</span>, <span class="attr">async</span>: <span class="string">&#x27;true&#x27;</span>&#125;,</span><br><span class="line">      <span class="comment">// 把上面的JS代码变量引用到这里</span></span><br><span class="line">      &#123;<span class="attr">innerHTML</span>: absbygoogle, <span class="attr">type</span>: <span class="string">&#x27;text/javascript&#x27;</span>, <span class="attr">charset</span>: <span class="string">&#x27;utf-8&#x27;</span>&#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="comment">// 禁止对JS转义，这一句一定要加上</span></span><br><span class="line">    __dangerouslyDisableSanitizers: [<span class="string">&#x27;script&#x27;</span>]</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  ** Customize the progress-bar color</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  loading: <span class="string">&#x27;@/components/loading.vue&#x27;</span>,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  ** Global CSS</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  css: [</span><br><span class="line">    <span class="string">&#x27;@/assets/common.css&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;@/assets/icon/iconfont.css&#x27;</span></span><br><span class="line">  ],</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  ** Plugins to load before mounting the App</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="string">&#x27;@/plugins/axios&#x27;</span></span><br><span class="line">  ],</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  ** Nuxt.js modules</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  modules: [</span><br><span class="line">    <span class="comment">// Doc: https://bootstrap-vue.js.org/docs/</span></span><br><span class="line">    <span class="string">&#x27;bootstrap-vue/nuxt&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;@nuxtjs/axios&#x27;</span></span><br><span class="line">  ],</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  ** Build configuration</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  build: &#123;</span><br><span class="line">    extractCSS: &#123;<span class="attr">allChunks</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    ** You can extend webpack config here</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="title">extend</span>(<span class="params">config, ctx</span>)</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/09/27/nuxt%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/27/nuxt%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" class="post-title-link" itemprop="url">nuxt内存泄漏</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-27 23:59:08" itemprop="dateCreated datePublished" datetime="2019-09-27T23:59:08+08:00">2019-09-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="nuxt内存泄漏排查"><a href="#nuxt内存泄漏排查" class="headerlink" title="nuxt内存泄漏排查"></a>nuxt内存泄漏排查</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>线上nuxt项目运行一段时间经常内存占用过高，导致服务器响应慢。内存泄漏问题不太好定位，本次定位问题使用easy-monitor工具来排查。</p>
+<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><p>easy-monitor运行结果：泄漏链：TimerList</p>
+<h3 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h3><p>从该结果分析可能是创建定时器没有移除。首页中有一个倒计时功能，使用了一个定时器setInterval，没有注意到该定时器是在creadted()创建的，在nuxt中该生命周期会同时运行在服务端和客户端，所以每访问一次都会创建一个定时器，而这个定时器只有倒计时结束时才结束，悲剧的是倒计时有时是后几天的时间…所以才会造成内存泄漏。在使用nuxt时一定要仔细看好哪些是在服务端运行的，不然很有可能出大问题。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/08/12/nuxt%E4%B8%AD%E6%A0%B9%E6%8D%AE%E6%98%AF%E5%90%A6%E5%9C%A8%E5%BE%AE%E4%BF%A1%E5%86%85%E6%98%BE%E7%A4%BA%E6%88%96%E9%9A%90%E8%97%8F%E5%85%83%E7%B4%A0%E5%87%BA%E9%94%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/12/nuxt%E4%B8%AD%E6%A0%B9%E6%8D%AE%E6%98%AF%E5%90%A6%E5%9C%A8%E5%BE%AE%E4%BF%A1%E5%86%85%E6%98%BE%E7%A4%BA%E6%88%96%E9%9A%90%E8%97%8F%E5%85%83%E7%B4%A0%E5%87%BA%E9%94%99/" class="post-title-link" itemprop="url">nuxt中根据是否在微信内显示或隐藏元素出错</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-08-12 19:10:07" itemprop="dateCreated datePublished" datetime="2019-08-12T19:10:07+08:00">2019-08-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>combined-inject.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (&#123; $axios, app, store, route, req &#125;, inject) =&gt; &#123;</span><br><span class="line">  inject(<span class="string">&#x27;isWeChat&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> UA = process.server ? req.headers[<span class="string">&#x27;user-agent&#x27;</span>] : navigator.userAgent</span><br><span class="line">    <span class="keyword">return</span> (<span class="regexp">/MicroMessenger/i</span>).test(UA)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;nuxt-link v-<span class="keyword">if</span>=<span class="string">&quot;$isWeChat()&quot;</span> :to=<span class="string">&quot;$i18n.path(&#x27;personal/recharge&#x27;)&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;btn-pill&quot;</span>&gt;</span><br><span class="line">    &lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;iconfont icon-recharge&quot;</span>&gt;&lt;/i&gt; 充值</span><br><span class="line">&lt;/nuxt-link&gt;</span><br></pre></td></tr></table></figure>
+
+<p>进入页面会报错 n.setAttribute is not a function</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>把v-if改为v-show，具体原因还不懂。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/08/07/ssr%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/07/ssr%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">ssr常用命令 与锐速常用命令</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-08-07 10:40:38" itemprop="dateCreated datePublished" datetime="2019-08-07T10:40:38+08:00">2019-08-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="ssr"><a href="#ssr" class="headerlink" title="ssr"></a>ssr</h2><ul>
+<li><p>卸载<br>bash shasowshocksR.sh uninstall</p>
+</li>
+<li><p>启动</p>
+<p>/etc/init.d/shadowsocks start</p>
+</li>
+<li><p>停止</p>
+<p>/etc/init.d/shadowsocks stop</p>
+</li>
+<li><p>重启</p>
+<p>/etc/init.d/shadowsocks restart</p>
+</li>
+<li><p>状态</p>
+<p>/etc/init.d/shadowsocks status</p>
+</li>
+<li><p>修改密码</p>
+<p>1.输入vi/etc/shadowsocks.json</p>
+<p>2.按“i”进入编辑模式，编辑如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123; </span><br><span class="line">  <span class="attr">&quot;server&quot;</span>: <span class="string">&quot;0.0.0.0&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;server_ipv6&quot;</span>: <span class="string">&quot;::&quot;</span>,      </span><br><span class="line">  <span class="attr">&quot;local_address&quot;</span>: <span class="string">&quot;127.0.0.1&quot;</span>, </span><br><span class="line">  <span class="attr">&quot;local_port&quot;</span>: <span class="number">1081</span>, </span><br><span class="line">  <span class="attr">&quot;port_password&quot;</span>:</span><br><span class="line">  &#123; </span><br><span class="line">    <span class="attr">&quot;端口1&quot;</span>:<span class="string">&quot;密码1&quot;</span>, </span><br><span class="line">    <span class="attr">&quot;端口2&quot;</span>:<span class="string">&quot;密码2&quot;</span>, </span><br><span class="line">    <span class="attr">&quot;端口3&quot;</span>:<span class="string">&quot;密码3&quot;</span>, </span><br><span class="line">    <span class="attr">&quot;端口4&quot;</span>:<span class="string">&quot;密码4&quot;</span> </span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="attr">&quot;timeout&quot;</span>: <span class="number">120</span>, </span><br><span class="line">  <span class="attr">&quot;udp_timeout&quot;</span>: <span class="number">60</span>, </span><br><span class="line">  <span class="attr">&quot;method&quot;</span>: <span class="string">&quot;chacha20&quot;</span>, </span><br><span class="line">  <span class="attr">&quot;protocol&quot;</span>: <span class="string">&quot;auth_sha1_compatible&quot;</span>, </span><br><span class="line">  <span class="attr">&quot;protocol_param&quot;</span>: <span class="string">&quot;&quot;</span>, </span><br><span class="line">  <span class="attr">&quot;obfs&quot;</span>: <span class="string">&quot;http_simple_compatible&quot;</span>, </span><br><span class="line">  <span class="attr">&quot;obfs_param&quot;</span>: <span class="string">&quot;&quot;</span>, </span><br><span class="line">  <span class="attr">&quot;dns_ipv6&quot;</span>: <span class="literal">false</span>, </span><br><span class="line">  <span class="attr">&quot;connect_verbose_info&quot;</span>: <span class="number">0</span>, </span><br><span class="line">  <span class="attr">&quot;redirect&quot;</span>: <span class="string">&quot;&quot;</span>, </span><br><span class="line">  <span class="attr">&quot;fast_open&quot;</span>: <span class="literal">false</span>, </span><br><span class="line">  <span class="attr">&quot;workers&quot;</span>: <span class="number">1</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3.按“i”进入编辑模式，编辑如下：</p>
+<p>按esc返回，输入:wq回车保存</p>
+<p>4.输入/etc/init.d/shadowsocks restart重启ssr</p>
+<p>5.如不能联网，则关闭防火墙（逐条输入）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service iptables restart</span><br><span class="line">service iptables stop chkconfig iptables off</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="锐速"><a href="#锐速" class="headerlink" title="锐速"></a>锐速</h2><ul>
+<li>重启锐速：</li>
+</ul>
+<p>/serverspeeder/bin/serverSpeeder.sh restart</p>
+<ul>
+<li>锐速状态：</li>
+</ul>
+<p>/serverspeeder/bin/serverSpeeder.sh status</p>
+<ul>
+<li>卸载锐速：</li>
+</ul>
+<p>chattr -i /serverspeeder/etc/apx* &amp;&amp; /serverspeeder/bin/serverSpeeder.sh uninstall -f</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/08/02/ubuntu%E5%AE%89%E8%A3%85git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/02/ubuntu%E5%AE%89%E8%A3%85git/" class="post-title-link" itemprop="url">ubuntu安装使用git</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-08-02 21:49:01" itemprop="dateCreated datePublished" datetime="2019-08-02T21:49:01+08:00">2019-08-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install git </span><br></pre></td></tr></table></figure>
+<p>安装完可使用 git –version命令来验证是否安装成功。</p>
+<h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><p>安装完之后要进行一些基础设置，如用户名,邮箱。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;你的用户名，例如github的账号&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的邮箱，例如github中的邮件地址&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h2><p>配置完成后，需要创建验证用的公钥，因为git是通过ssh的方式访问资源库的，所以需要在本地创建验证用的文件。使用命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -C <span class="string">&#x27;你的邮箱地址&#x27;</span> -t rsa</span><br></pre></td></tr></table></figure>
+<p>会在用户目录下生成.ssh文件夹，里面有私钥id_rsa和公钥id_rsa</p>
+<h2 id="出现的问题"><a href="#出现的问题" class="headerlink" title="出现的问题"></a>出现的问题</h2><ul>
+<li><p>ssh出错 sign_and_send_pubkey: signing failed: agent refused operation<br>  然后执行了以下命令才好。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span> <span class="string">&quot;<span class="subst">$(ssh-agent -s)</span>&quot;</span></span><br><span class="line">ssh-add</span><br></pre></td></tr></table></figure></li>
+<li><p>执行ssh-add提示信息:<br>  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>  @         WARNING: UNPROTECTED PRIVATE KEY FILE!          @<br>  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>  Permissions 0775 for ‘/home/chensw/.ssh/id_rsa’ are too open.<br>  It is required that your private key files are NOT accessible by others.<br>  This private key will be ignored.<br>  bad permissions: ignore key: /home/chensw/.ssh/id_rsa</p>
+<p>  这是因为私钥id_rsa文件权限太高，不允许其他人访问，降低权限即可</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 600 ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+<p>  然后再执行ssh-add即可</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/07/31/%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95Facebook%E3%80%81Google/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/31/%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95Facebook%E3%80%81Google/" class="post-title-link" itemprop="url">web第三方登录Facebook、Google</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-31 18:09:29" itemprop="dateCreated datePublished" datetime="2019-07-31T18:09:29+08:00">2019-07-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Facebook登录"><a href="#Facebook登录" class="headerlink" title="Facebook登录"></a>Facebook登录</h1><blockquote>
+<p>Facebook登入api官网：<a target="_blank" rel="noopener" href="https://developers.facebook.com/docs/facebook-login/web#login">配搭 JavaScript SDK 的網頁版「Facebook 登入」</a><br>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zh_rey/article/details/78859543">Facebook第三方登录（JavaScript SDK）</a></p>
+</blockquote>
+<h1 id="Googel登录"><a href="#Googel登录" class="headerlink" title="Googel登录"></a>Googel登录</h1><blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zh_rey/article/details/79013290">Google第三方登录（JavaScript SDK）</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/07/29/%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/29/%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">微信浏览器缓存问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-29 18:16:01" itemprop="dateCreated datePublished" datetime="2019-07-29T18:16:01+08:00">2019-07-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>最近在做微信公众号，接入webapp，遇到缓存的问题，特此记录一下。</p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>微信内置浏览器会把入口文件全部缓存下来，导致每次更新后，进入的还是旧的版本。</p>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>参考</p>
+<blockquote>
+<p> <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/cce9511c0914">我想转行之—-微信浏览器缓存</a> </p>
+</blockquote>
+<ul>
+<li>在入口地址后加参数  <a target="_blank" rel="noopener" href="https://m.xxxx.xxx/xxx?v=1.0">https://m.xxxx.xxx/xxx?v=1.0</a></li>
+<li>在html的meta标签添加缓存设置<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- cache control: no cache --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Cache-Control&quot;</span> <span class="attr">content</span>=<span class="string">&quot;no-cache, no-store, must-revalidate&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Pragma&quot;</span> <span class="attr">content</span>=<span class="string">&quot;no-cache&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Expires&quot;</span> <span class="attr">content</span>=<span class="string">&quot;0&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/07/23/CentOS7%E5%AE%89%E8%A3%85nodejs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/23/CentOS7%E5%AE%89%E8%A3%85nodejs/" class="post-title-link" itemprop="url">CentOS7安装nodejs、nginx及部署nuxt</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-23 18:23:50" itemprop="dateCreated datePublished" datetime="2019-07-23T18:23:50+08:00">2019-07-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h1><h2 id="直接安装"><a href="#直接安装" class="headerlink" title="直接安装"></a>直接安装</h2><ol>
+<li><p>安装wget（已经安装可跳过）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y wget</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载nodejs最新的包<br>在nodejs官网<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/找到下载地址，执行">https://nodejs.org/en/download/找到下载地址，执行</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-x64.tar.xz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解压包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf node-v10.16.0-linux-x64.tar.xz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>部署bin文件<br>需要nodejs的路径，刚才解压后的nodejs路径为~/node/node-v10.16.0-linux-x64/bin，执行 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s ~/node/node-v10.16.0-linux-x64/bin/node /usr/bin/node</span><br><span class="line">ln -s ~/node/node-v10.16.0-linux-x64/bin/npm /usr/bin/npm</span><br></pre></td></tr></table></figure>
+<p>注意ln指令用于创建关联（类似与Windows的快捷方式）必须给全路径，否则可能关联错误</p>
+</li>
+<li><p>测试是否安装成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@vultr node-v10.16.0-linux-x64]<span class="comment"># node -v</span></span><br><span class="line">v10.16.0</span><br><span class="line">[root@vultr node-v10.16.0-linux-x64]<span class="comment"># npm -v</span></span><br><span class="line">6.9.0</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/23/CentOS7%E5%AE%89%E8%A3%85nodejs/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">琴客</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">琴客</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

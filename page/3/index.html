@@ -1,23 +1,1082 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block title %}{{ title }}{% if theme.index_with_subtitle and subtitle %} – {{ subtitle }}{% endif %}{% endblock %}
+<link rel="stylesheet" href="/css/main.css">
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
 
-{% block content %}
-  <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
-  </section>
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.chensw.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+  <meta property="og:type" content="website">
+<meta property="og:title" content="琴客的个人博客">
+<meta property="og:url" content="https://www.chensw.top/page/3/index.html">
+<meta property="og:site_name" content="琴客的个人博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="琴客">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://www.chensw.top/page/3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>琴客的个人博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">琴客的个人博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/07/23/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/23/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/" class="post-title-link" itemprop="url">微信公众号开发</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-23 15:08:18" itemprop="dateCreated datePublished" datetime="2019-07-23T15:08:18+08:00">2019-07-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="微信公众号的二次开发"><a href="#微信公众号的二次开发" class="headerlink" title="微信公众号的二次开发"></a>微信公众号的二次开发</h3><p>微信公众号是微信里面的一个强大的功能，微信是张小龙一手创办的。</p>
+<p>微信公众号和微信小程序是微信平台化的战略部署。</p>
+<p>微信公众号需要用户去关注，在微信公众号里可以做一些消息的推送等等之类的业务，最重要的是微信公众号中提供了二次开发的api，比如可以在微信公众号中嵌入webapp，所以我们作为H5开发工程师需要关注的就是在微信公众号的二次开发中如何开发嵌入在其中的webapp</p>
+<p>webapp的开发不需要研究了，我们需要真正掌握的技术是什么？</p>
+<p>嵌入到微信公众号中的webapp和普通的在手机浏览器中的打开的webapp是有区别的，区别就是微信公众号中的webapp可以调用微信中的JS-SDK来调用微信、设备的原生功能。</p>
+<p>在混合开发的学习中，我们了解到，在手机浏览器中的普通的webapp是受浏览器安全级别限制的，无法调用设备原生功能，但是当webapp嵌入到微信公众号中，webapp页面就可以和微信这个native应用进行交互了，微信提供了JS-SDK来做这一点，所以页面可以调用JSSDK，就可以去调用微信、设备的原生功能了。</p>
+<p>所以我们需要掌握的是就是当页面被嵌入到微信公众号之后，如何调用JS-SDK。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/23/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/07/12/vue%E4%B8%AD%E6%95%B0%E7%BB%84%E5%92%8C%E5%AF%B9%E8%B1%A1%E6%94%B9%E5%8F%98%E6%97%B6%E8%A7%86%E5%9B%BE%E4%B8%8D%E6%9B%B4%E6%96%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/12/vue%E4%B8%AD%E6%95%B0%E7%BB%84%E5%92%8C%E5%AF%B9%E8%B1%A1%E6%94%B9%E5%8F%98%E6%97%B6%E8%A7%86%E5%9B%BE%E4%B8%8D%E6%9B%B4%E6%96%B0/" class="post-title-link" itemprop="url">vue中数组和对象改变时视图不更新</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-12 14:31:04" itemprop="dateCreated datePublished" datetime="2019-07-12T14:31:04+08:00">2019-07-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p> 在vue中，有时会出现数组或者对象改变了，但是视图没有更新的问题。其实这是因为数组或者对象改变的方式没有触发数据的set方法。</p>
+<h2 id="不会触发set的情况"><a href="#不会触发set的情况" class="headerlink" title="不会触发set的情况"></a>不会触发set的情况</h2><p>当数据是一个对象的时候，修改、添加、删除数据的属性值都不会触发set方法。<br>当数据是一个数组时，push、pop、shift、unshift 等原生方法也无法触发set方法。</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ul>
+<li><p>数组更新检测</p>
+<p>Vue为我们定义了一系列的变异方法，可以直接使用：</p>
+<ul>
+<li>push() </li>
+<li>pop() </li>
+<li>shift() </li>
+<li>unshift() </li>
+<li>splice() </li>
+<li>sort() </li>
+<li>reverse()</li>
+</ul>
+</li>
+<li><p>对象更新检测</p>
+<p>使用 Vue.set(object, key, value) 方法将响应属性添加到嵌套的对象上</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.set(<span class="built_in">this</span>.obj, <span class="string">&#x27;test&#x27;</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>还可以使用 vm.$set 实例方法，这也是全局 Vue.set 方法的别名：</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.$set(<span class="built_in">this</span>.obj,<span class="string">&#x27;test&#x27;</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/07/11/vue-infinite-scroll%E4%B8%80%E7%9B%B4%E8%A7%A6%E5%8F%91loadmore/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/11/vue-infinite-scroll%E4%B8%80%E7%9B%B4%E8%A7%A6%E5%8F%91loadmore/" class="post-title-link" itemprop="url">vue-infinite-scroll一直触发loadmore</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-11 18:35:57" itemprop="dateCreated datePublished" datetime="2019-07-11T18:35:57+08:00">2019-07-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在使用vue-infinite-scroll组件的时候遇到一直触发loadmore的问题，无论infinite-scroll-distance设置多大，都会一直触发</p>
+<p>当父容器的display为none时，也会一直触发，因为此时高度为0。</p>
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><p>需要在使用的标签外面的容器上设置height 或 设置 overflow-y:hidden</p>
+<p>var viewportBottom = viewportScrollTop + getVisibleHeight(scrollEventTarget);<br>源码中有这么一段。必须设置包裹ul的外层容器上设置height，不然在判断是否需要拉取更多<br>shouldTrigger = viewportBottom + distance &gt;= elementBottom;<br>的时候shouldTrigger一直是true</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/07/06/JS%E9%AA%8C%E8%AF%81input%E8%BE%93%E5%85%A5%E6%A1%86%EF%BC%88%E5%AD%97%E6%AF%8D%EF%BC%8C%E6%95%B0%E5%AD%97%EF%BC%8C%E7%AC%A6%E5%8F%B7%EF%BC%8C%E4%B8%AD%E6%96%87%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/06/JS%E9%AA%8C%E8%AF%81input%E8%BE%93%E5%85%A5%E6%A1%86%EF%BC%88%E5%AD%97%E6%AF%8D%EF%BC%8C%E6%95%B0%E5%AD%97%EF%BC%8C%E7%AC%A6%E5%8F%B7%EF%BC%8C%E4%B8%AD%E6%96%87%EF%BC%89/" class="post-title-link" itemprop="url">JS验证input输入框（字母，数字，符号，中文）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-06 23:08:41" itemprop="dateCreated datePublished" datetime="2019-07-06T23:08:41+08:00">2019-07-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>只能输入英文</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">onkeyup</span>=<span class="string">&quot;value=value.replace(/[^a-zA-Z]/g,&#x27;&#x27;)&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<p>只能输入英文</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">onkeyup</span>=<span class="string">&quot;value=value.replace(/[^\a-\z\A-\Z]/g,&#x27;&#x27;)&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">onkeydown</span>=<span class="string">&quot;fncKeyStop(event)&quot;</span> <span class="attr">onpaste</span>=<span class="string">&quot;return false&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">oncontextmenu</span>=<span class="string">&quot;return false&quot;</span> /&gt;</span></span><br><span class="line">无法粘贴，右键不会弹出粘贴菜单</span><br></pre></td></tr></table></figure>
+
+<p>只能输入数字：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">onkeyup</span>=<span class="string">&quot;this.value=this.value.replace(/\D/g,&#x27;&#x27;)&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">onafterpaste</span>=<span class="string">&quot;this.value=this.value.replace(/\D/g,&#x27;&#x27;)&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/06/JS%E9%AA%8C%E8%AF%81input%E8%BE%93%E5%85%A5%E6%A1%86%EF%BC%88%E5%AD%97%E6%AF%8D%EF%BC%8C%E6%95%B0%E5%AD%97%EF%BC%8C%E7%AC%A6%E5%8F%B7%EF%BC%8C%E4%B8%AD%E6%96%87%EF%BC%89/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/07/06/%E6%B7%98%E5%AE%9Dnpm%E6%BA%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/06/%E6%B7%98%E5%AE%9Dnpm%E6%BA%90/" class="post-title-link" itemprop="url">淘宝npm镜像</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-06 21:18:57" itemprop="dateCreated datePublished" datetime="2019-07-06T21:18:57+08:00">2019-07-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="使用淘宝npm镜像"><a href="#使用淘宝npm镜像" class="headerlink" title="使用淘宝npm镜像"></a>使用淘宝npm镜像</h2><p>npm作为国外的node仓库安装工具，会受到我大长城防火墙的干扰，国内用户在安装相关的资源的时候，会出现安装失败，以及速度很慢的情况。为了解决npm安装的问题，国内出现了很多npm的镜像网址，taobao的npm镜像算是使用频率比较高的了。<br>使用的方法有三种，首先是淘宝npm自己提供的两种：<br>1）你可以使用我们定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 npm:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<p>2）或者你直接通过添加 npm 参数 alias 一个新命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias cnpm&#x3D;&quot;npm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org \ --cache&#x3D;$HOME&#x2F;.npm&#x2F;.cache&#x2F;cnpm \ --disturl&#x3D;https:&#x2F;&#x2F;npm.taobao.org&#x2F;dist \ --userconfig&#x3D;$HOME&#x2F;.cnpmrc&quot; # Or alias it in .bashrc or .zshrc $ echo &#39;\n#alias for cnpm\nalias cnpm&#x3D;&quot;npm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org \ --cache&#x3D;$HOME&#x2F;.npm&#x2F;.cache&#x2F;cnpm \ --disturl&#x3D;https:&#x2F;&#x2F;npm.taobao.org&#x2F;dist \ --userconfig&#x3D;$HOME&#x2F;.cnpmrc&quot;&#39; &gt;&gt; ~&#x2F;.zshrc &amp;&amp; source ~&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
+
+
+<p>3）直接将本地的npm仓库指向淘宝的镜像地址</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+
+<p>// 配置后可通过下面方式来验证是否成功</p>
+<pre><code>npm config get registry</code></pre><p>// 或<br>    npm info express</p>
+<p>其实还有第四种，那就是临时使用的时候</p>
+<pre><code>npm --registry https://registry.npm.taobao.org install express</code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/07/03/nuxt%E4%B8%AD%E6%AF%8F%E4%B8%AA%E9%A1%B5%E9%9D%A2%E5%BC%95%E5%85%A5sass%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8Cmxins/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/03/nuxt%E4%B8%AD%E6%AF%8F%E4%B8%AA%E9%A1%B5%E9%9D%A2%E5%BC%95%E5%85%A5sass%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8Cmxins/" class="post-title-link" itemprop="url">nuxt中每个页面引入sass全局变量和mxins</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-03 14:13:34" itemprop="dateCreated datePublished" datetime="2019-07-03T14:13:34+08:00">2019-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在页面中经常用到一些常用的变量和mixins，避免每个页面都要导入，可以使用@nuxtjs/style-resources</p>
+<blockquote>
+<p>可参考nuxt官方文档 <a target="_blank" rel="noopener" href="https://zh.nuxtjs.org/api/configuration-build/#styleresources">https://zh.nuxtjs.org/api/configuration-build/#styleresources</a></p>
+</blockquote>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
+<li><p>安装@nuxtjs/style-resources模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install @nuxtjs/style-resources --save-dev</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改nuxt.config.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  modules: [</span><br><span class="line">    <span class="string">&#x27;@nuxtjs/style-resources&#x27;</span></span><br><span class="line">  ],</span><br><span class="line">  styleResources: &#123;</span><br><span class="line">    scss: [<span class="string">&#x27;./assets/_mixins.scss&#x27;</span>, <span class="string">&#x27;./assets/_variables.scss&#x27;</span>] <span class="comment">// 定义的全局mixins、变量文件路径</span></span><br><span class="line">    less: <span class="string">&#x27;./assets/****.less&#x27;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="comment">// 根据需要添加相应文件</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/06/24/vue%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4%E5%AE%9E%E7%8E%B0v-loading/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/24/vue%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4%E5%AE%9E%E7%8E%B0v-loading/" class="post-title-link" itemprop="url">vue自定义指令实现v-loading</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-24 18:48:18" itemprop="dateCreated datePublished" datetime="2019-06-24T18:48:18+08:00">2019-06-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>新建js文件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;~/assets/style/_loading.scss&#x27;</span></span><br><span class="line"></span><br><span class="line">Vue.directive(<span class="string">&#x27;loading&#x27;</span>, &#123;</span><br><span class="line">  bind: <span class="function">(<span class="params">el, binding</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> tempDiv = <span class="built_in">document</span>.createElement(<span class="string">&#x27;div&#x27;</span>)</span><br><span class="line">    tempDiv.className = <span class="string">&#x27;custom-loading&#x27;</span></span><br><span class="line">    <span class="keyword">const</span> round = <span class="built_in">document</span>.createElement(<span class="string">&#x27;div&#x27;</span>)</span><br><span class="line">    round.className = <span class="string">&#x27;custom-loading-round&#x27;</span></span><br><span class="line">    tempDiv.appendChild(round)</span><br><span class="line">    el.loadingElement = tempDiv</span><br><span class="line">    <span class="comment">/* if (binding.value) &#123;</span></span><br><span class="line"><span class="comment">      const curStyle = window.getComputedStyle(el)</span></span><br><span class="line"><span class="comment">      const position = curStyle.position</span></span><br><span class="line"><span class="comment">      if (position === &#x27;absolute&#x27; || position === &#x27;relative&#x27;) &#123;</span></span><br><span class="line"><span class="comment">        el.style.position = position</span></span><br><span class="line"><span class="comment">      &#125; else &#123;</span></span><br><span class="line"><span class="comment">        el.style.position = &#x27;relative&#x27;</span></span><br><span class="line"><span class="comment">      &#125;</span></span><br><span class="line"><span class="comment">      el.appendChild(tempDiv)</span></span><br><span class="line"><span class="comment">    &#125; else &#123;</span></span><br><span class="line"><span class="comment">      if (tempDiv.parentNode !== null) &#123;</span></span><br><span class="line"><span class="comment">        tempDiv.parentNode.removeChild(tempDiv)</span></span><br><span class="line"><span class="comment">      &#125;</span></span><br><span class="line"><span class="comment">    &#125; */</span></span><br><span class="line">    <span class="keyword">const</span> curStyle = <span class="built_in">window</span>.getComputedStyle(el)</span><br><span class="line">    <span class="keyword">const</span> position = curStyle.position</span><br><span class="line">    <span class="keyword">if</span> (position === <span class="string">&#x27;absolute&#x27;</span> || position === <span class="string">&#x27;relative&#x27;</span>) &#123;</span><br><span class="line">      el.style.position = position</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      el.style.position = <span class="string">&#x27;relative&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (binding.value) &#123;</span><br><span class="line">      el.appendChild(tempDiv)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  update: <span class="function">(<span class="params">el, binding</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (binding.value) &#123;</span><br><span class="line">      <span class="keyword">if</span> (el.loadingElement.parentNode === <span class="literal">null</span>) &#123;</span><br><span class="line">        el.appendChild(el.loadingElement)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (el === el.loadingElement.parentNode) &#123;</span><br><span class="line">      el.removeChild(el.loadingElement)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  unbind: <span class="function">(<span class="params">el</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (el.loadingElement.parentNode === el) &#123;</span><br><span class="line">      el.removeChild(el.loadingElement)</span><br><span class="line">    &#125;</span><br><span class="line">    el.loadingElement = <span class="literal">null</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/06/24/vue%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4%E5%AE%9E%E7%8E%B0v-loading/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/06/24/%E5%89%8D%E7%AB%AF%E5%BC%80%E6%94%BE%E4%B8%AD%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/24/%E5%89%8D%E7%AB%AF%E5%BC%80%E6%94%BE%E4%B8%AD%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">前端开发中常用方法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-24 17:12:53" itemprop="dateCreated datePublished" datetime="2019-06-24T17:12:53+08:00">2019-06-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="js中获取对象的所有key值"><a href="#js中获取对象的所有key值" class="headerlink" title="js中获取对象的所有key值"></a>js中获取对象的所有key值</h2><p>一般是遍历对象的键值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> obj)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key, obj[key])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>更简单的是使用：Object.keys()</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.keys(obj)</span><br></pre></td></tr></table></figure>
+<p>返回的是由key组成的数组</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/06/24/%E5%89%8D%E7%AB%AF%E5%BC%80%E6%94%BE%E4%B8%AD%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/06/21/UTC%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%9C%AC%E5%9C%B0%E6%97%B6%E9%97%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/21/UTC%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%9C%AC%E5%9C%B0%E6%97%B6%E9%97%B4/" class="post-title-link" itemprop="url">UTC时间转换为本地时间</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-21 19:42:19" itemprop="dateCreated datePublished" datetime="2019-06-21T19:42:19+08:00">2019-06-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="javascript转UTC时间为本地时间"><a href="#javascript转UTC时间为本地时间" class="headerlink" title="javascript转UTC时间为本地时间"></a>javascript转UTC时间为本地时间</h3><p>因为后端传的不是标准的UTC时间格式的字符串，标准的是“2019-06-21T19:45:23Z”，后端传的是“2019-06-21 19:45:23”字符串，所以要先处理一下，转成标准的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">UTCDateStrToLocale</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    str = str.replace(<span class="string">&#x27; &#x27;</span>, <span class="string">&#x27;T&#x27;</span>) + <span class="string">&#x27;Z&#x27;</span>  <span class="comment">// UTC时间字符串</span></span><br><span class="line">    <span class="keyword">let</span> data = <span class="keyword">new</span> <span class="built_in">Date</span>(str) <span class="comment">// data本地时间</span></span><br><span class="line">    data = formatDate(data) <span class="comment">// 格式化显示为“yyyy-mm-dd hh:mm:ss”</span></span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatDate</span>(<span class="params">dataObj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> year = dataObj.getFullYear()</span><br><span class="line">  <span class="keyword">const</span> month = formatFunc(dataObj.getMonth() + <span class="number">1</span>)</span><br><span class="line">  <span class="keyword">const</span> date = formatFunc(dataObj.getDate())</span><br><span class="line">  <span class="keyword">const</span> hour = formatFunc(dataObj.getHours())</span><br><span class="line">  <span class="keyword">const</span> min = formatFunc(dataObj.getMinutes())</span><br><span class="line">  <span class="keyword">const</span> sec = formatFunc(dataObj.getSeconds())</span><br><span class="line">  <span class="keyword">const</span> dataStr = year + <span class="string">&#x27;-&#x27;</span> + month + <span class="string">&#x27;-&#x27;</span> + date + <span class="string">&#x27; &#x27;</span> + hour + <span class="string">&#x27;:&#x27;</span> + min + <span class="string">&#x27;:&#x27;</span> + sec</span><br><span class="line">  <span class="keyword">return</span> dataStr</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 格式化显示</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatFunc</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> str &gt; <span class="number">9</span> ? str : <span class="string">&#x27;0&#x27;</span> + str</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/06/20/linux%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/20/linux%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">linux基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-20 22:02:50" itemprop="dateCreated datePublished" datetime="2019-06-20T22:02:50+08:00">2019-06-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="文件和目录"><a href="#文件和目录" class="headerlink" title="文件和目录"></a>文件和目录</h1><h2 id="1-Linux-目录"><a href="#1-Linux-目录" class="headerlink" title="1.Linux 目录"></a>1.Linux 目录</h2><p><img src="/images/linux%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png" alt="linux目录结构"></p>
+<ul>
+<li><strong>/</strong>：根目录，一般根目录下只存放目录，在Linux下有且只有一个根目录。所有的东西都是从这里开始。当你在终端里输入“/home”，你其实是在告诉电脑，先从/（根目录）开始，再进入到home目录。</li>
+<li><strong>/bin、/usr/bin</strong>: 可执行二进制文件的目录，如常用的命令ls、tar、mv、cat等。</li>
+<li><strong>/boot</strong>：放置linux系统启动时用到的一些文件，如Linux的内核文件：/boot/vmlinuz，系统引导管理器：/boot/grub。</li>
+<li><strong>/dev</strong>：存放linux系统下的设备文件，访问该目录下某个文件，相当于访问某个设备，常用的是挂载光驱 mount /dev/cdrom /mnt。</li>
+<li><strong>/etc</strong>：系统配置文件存放的目录，不建议在此目录下存放可执行文件，重要的配置文件有 /etc/inittab、/etc/fstab、/etc/init.d、/etc/X11、/etc/sysconfig、/etc/xinetd.d。</li>
+<li><strong>/home</strong>：系统默认的用户家目录，新增用户账号时，用户的家目录都存放在此目录下，~表示当前用户的家目录，~edu 表示用户 edu 的家目录。</li>
+<li><strong>/lib、/usr/lib、/usr/local/lib</strong>：系统使用的函数库的目录，程序在执行过程中，需要调用一些额外的参数时需要函数库的协助。</li>
+<li><strong>/lost+fount</strong>：系统异常产生错误时，会将一些遗失的片段放置于此目录下。</li>
+<li><strong>/mnt: /media</strong>：光盘默认挂载点，通常光盘挂载于 /mnt/cdrom 下，也不一定，可以选择任意位置进行挂载。</li>
+<li><strong>/opt</strong>：给主机额外安装软件所摆放的目录。</li>
+<li><strong>/proc</strong>：此目录的数据都在内存中，如系统核心，外部设备，网络状态，由于数据都存放于内存中，所以不占用磁盘空间，比较重要的目录有 /proc/cpuinfo、/proc/interrupts、/proc/dma、/proc/ioports、/proc/net/* 等。</li>
+<li><strong>/root</strong>：系统管理员root的家目录。</li>
+<li><strong>/sbin、/usr/sbin、/usr/local/sbin</strong>：放置系统管理员使用的可执行命令，如fdisk、shutdown、mount 等。与 /bin 不同的是，这几个目录是给系统管理员 root使用的命令，一般用户只能”查看”而不能设置和使用。</li>
+<li><strong>/tmp</strong>：一般用户或正在执行的程序临时存放文件的目录，任何人都可以访问，重要数据不可放置在此目录下。</li>
+<li><strong>/srv</strong>：服务启动之后需要访问的数据目录，如 www 服务需要访问的网页数据存放在 /srv/www 内。</li>
+<li><strong>/usr</strong>：应用程序存放目录，/usr/bin 存放应用程序，/usr/share 存放共享数据，/usr/lib 存放不能直接运行的，却是许多程序运行所必需的一些函数库文件。/usr/local: 存放软件升级包。/usr/share/doc: 系统说明文件存放目录。/usr/share/man: 程序说明文件存放目录。</li>
+<li><strong>/var</strong>：放置系统执行过程中经常变化的文件，如随时更改的日志文件 /var/log，/var/log/message：所有的登录文件存放目录，/var/spool/mail：邮件存放的目录，/var/run:程序或服务启动后，其PID存放在该目录下。</li>
+</ul>
+<h2 id="终端简介"><a href="#终端简介" class="headerlink" title="终端简介"></a>终端简介</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">chensw@chensw:~$</span><br><span class="line">    chensw  当前登录的用户是chensw</span><br><span class="line">    @chensw 当前系统主机名chensw</span><br><span class="line">    ～      当前所在目录的目录名是(~家目录)</span><br><span class="line">    $       当前用户权限为普通用户</span><br><span class="line">    <span class="comment">#       当前用户权限为管理员</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/06/20/linux%E5%9F%BA%E7%A1%80/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">琴客</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">琴客</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

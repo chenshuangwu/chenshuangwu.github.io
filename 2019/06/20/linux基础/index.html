@@ -1,23 +1,958 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
+<link rel="stylesheet" href="/css/main.css">
 
-{% block page_class %}page-post-detail{% endblock %}
 
-{% block content %}
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.chensw.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="文件和目录1.Linux 目录  &#x2F;：根目录，一般根目录下只存放目录，在Linux下有且只有一个根目录。所有的东西都是从这里开始。当你在终端里输入“&#x2F;home”，你其实是在告诉电脑，先从&#x2F;（根目录）开始，再进入到home目录。 &#x2F;bin、&#x2F;usr&#x2F;bin: 可执行二进制文件的目录，如常用的命令ls、tar、mv、cat等。 &#x2F;boot：放置linux系统启动时用到的一些文件，如Linux的内核文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux基础">
+<meta property="og:url" content="https://www.chensw.top/2019/06/20/linux%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="琴客的个人博客">
+<meta property="og:description" content="文件和目录1.Linux 目录  &#x2F;：根目录，一般根目录下只存放目录，在Linux下有且只有一个根目录。所有的东西都是从这里开始。当你在终端里输入“&#x2F;home”，你其实是在告诉电脑，先从&#x2F;（根目录）开始，再进入到home目录。 &#x2F;bin、&#x2F;usr&#x2F;bin: 可执行二进制文件的目录，如常用的命令ls、tar、mv、cat等。 &#x2F;boot：放置linux系统启动时用到的一些文件，如Linux的内核文件">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.chensw.top/images/linux%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png">
+<meta property="article:published_time" content="2019-06-20T14:02:50.000Z">
+<meta property="article:modified_time" content="2021-03-18T02:22:04.483Z">
+<meta property="article:author" content="琴客">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.chensw.top/images/linux%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png">
+
+<link rel="canonical" href="https://www.chensw.top/2019/06/20/linux%E5%9F%BA%E7%A1%80/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>linux基础 | 琴客的个人博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">琴客的个人博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/06/20/linux%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          linux基础
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-20 22:02:50" itemprop="dateCreated datePublished" datetime="2019-06-20T22:02:50+08:00">2019-06-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="文件和目录"><a href="#文件和目录" class="headerlink" title="文件和目录"></a>文件和目录</h1><h2 id="1-Linux-目录"><a href="#1-Linux-目录" class="headerlink" title="1.Linux 目录"></a>1.Linux 目录</h2><p><img src="/images/linux%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png" alt="linux目录结构"></p>
+<ul>
+<li><strong>/</strong>：根目录，一般根目录下只存放目录，在Linux下有且只有一个根目录。所有的东西都是从这里开始。当你在终端里输入“/home”，你其实是在告诉电脑，先从/（根目录）开始，再进入到home目录。</li>
+<li><strong>/bin、/usr/bin</strong>: 可执行二进制文件的目录，如常用的命令ls、tar、mv、cat等。</li>
+<li><strong>/boot</strong>：放置linux系统启动时用到的一些文件，如Linux的内核文件：/boot/vmlinuz，系统引导管理器：/boot/grub。</li>
+<li><strong>/dev</strong>：存放linux系统下的设备文件，访问该目录下某个文件，相当于访问某个设备，常用的是挂载光驱 mount /dev/cdrom /mnt。</li>
+<li><strong>/etc</strong>：系统配置文件存放的目录，不建议在此目录下存放可执行文件，重要的配置文件有 /etc/inittab、/etc/fstab、/etc/init.d、/etc/X11、/etc/sysconfig、/etc/xinetd.d。</li>
+<li><strong>/home</strong>：系统默认的用户家目录，新增用户账号时，用户的家目录都存放在此目录下，~表示当前用户的家目录，~edu 表示用户 edu 的家目录。</li>
+<li><strong>/lib、/usr/lib、/usr/local/lib</strong>：系统使用的函数库的目录，程序在执行过程中，需要调用一些额外的参数时需要函数库的协助。</li>
+<li><strong>/lost+fount</strong>：系统异常产生错误时，会将一些遗失的片段放置于此目录下。</li>
+<li><strong>/mnt: /media</strong>：光盘默认挂载点，通常光盘挂载于 /mnt/cdrom 下，也不一定，可以选择任意位置进行挂载。</li>
+<li><strong>/opt</strong>：给主机额外安装软件所摆放的目录。</li>
+<li><strong>/proc</strong>：此目录的数据都在内存中，如系统核心，外部设备，网络状态，由于数据都存放于内存中，所以不占用磁盘空间，比较重要的目录有 /proc/cpuinfo、/proc/interrupts、/proc/dma、/proc/ioports、/proc/net/* 等。</li>
+<li><strong>/root</strong>：系统管理员root的家目录。</li>
+<li><strong>/sbin、/usr/sbin、/usr/local/sbin</strong>：放置系统管理员使用的可执行命令，如fdisk、shutdown、mount 等。与 /bin 不同的是，这几个目录是给系统管理员 root使用的命令，一般用户只能”查看”而不能设置和使用。</li>
+<li><strong>/tmp</strong>：一般用户或正在执行的程序临时存放文件的目录，任何人都可以访问，重要数据不可放置在此目录下。</li>
+<li><strong>/srv</strong>：服务启动之后需要访问的数据目录，如 www 服务需要访问的网页数据存放在 /srv/www 内。</li>
+<li><strong>/usr</strong>：应用程序存放目录，/usr/bin 存放应用程序，/usr/share 存放共享数据，/usr/lib 存放不能直接运行的，却是许多程序运行所必需的一些函数库文件。/usr/local: 存放软件升级包。/usr/share/doc: 系统说明文件存放目录。/usr/share/man: 程序说明文件存放目录。</li>
+<li><strong>/var</strong>：放置系统执行过程中经常变化的文件，如随时更改的日志文件 /var/log，/var/log/message：所有的登录文件存放目录，/var/spool/mail：邮件存放的目录，/var/run:程序或服务启动后，其PID存放在该目录下。</li>
+</ul>
+<h2 id="终端简介"><a href="#终端简介" class="headerlink" title="终端简介"></a>终端简介</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">chensw@chensw:~$</span><br><span class="line">    chensw  当前登录的用户是chensw</span><br><span class="line">    @chensw 当前系统主机名chensw</span><br><span class="line">    ～      当前所在目录的目录名是(~家目录)</span><br><span class="line">    $       当前用户权限为普通用户</span><br><span class="line">    <span class="comment">#       当前用户权限为管理员</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><a id="more"></a>
+<h4 id="who"><a href="#who" class="headerlink" title="who"></a>who</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>who</td>
+<td>当前用户的登录属性信息</td>
+</tr>
+<tr>
+<td>whoami</td>
+<td>当前登录用户的用户名</td>
+</tr>
+<tr>
+<td>#### 路径</td>
+<td></td>
+</tr>
+<tr>
+<td>命令</td>
+<td>含义</td>
+</tr>
+<tr>
+<td>——–</td>
+<td>———————-</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>当前目录所在的绝对路径</td>
+</tr>
+<tr>
+<td>绝对路径</td>
+<td>以/开头的路径</td>
+</tr>
+<tr>
+<td>相对路径</td>
+<td>不以/开头的路径</td>
+</tr>
+<tr>
+<td>.</td>
+<td>当前目录</td>
+</tr>
+<tr>
+<td>..</td>
+<td>上一级目录</td>
+</tr>
+<tr>
+<td>#### 查看目录文件</td>
+<td></td>
+</tr>
+<tr>
+<td>命令</td>
+<td>含义</td>
+</tr>
+<tr>
+<td>——————-</td>
+<td>—————————————————</td>
+</tr>
+<tr>
+<td>ls</td>
+<td>列表显示当前目录下所有文件名</td>
+</tr>
+<tr>
+<td>ls -a</td>
+<td>列表显示当前目录下所有文件名(隐藏文件(.开头的文件))</td>
+</tr>
+<tr>
+<td>ls -l</td>
+<td>列表显示当前目录下所有文件属性信息</td>
+</tr>
+<tr>
+<td>ls /home/chensw</td>
+<td>列表显示/home/chensw下所有文件名</td>
+</tr>
+<tr>
+<td>ls -ld /home/chensw</td>
+<td>查看/home/chensw的目录属性信息</td>
+</tr>
+</tbody></table>
+<h4 id="切换到指定目录"><a href="#切换到指定目录" class="headerlink" title="切换到指定目录"></a>切换到指定目录</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cd</td>
+<td>目录切换到家目录</td>
+</tr>
+<tr>
+<td>cd</td>
+<td>/var/log 目录切换到/var/log目录中</td>
+</tr>
+<tr>
+<td>cd ..</td>
+<td>目录切换到上一级目录</td>
+</tr>
+<tr>
+<td>cd ~</td>
+<td>目录切换到家目录</td>
+</tr>
+<tr>
+<td>cd -</td>
+<td>目录切换到上一次操作所在目录</td>
+</tr>
+</tbody></table>
+<h2 id="帮助"><a href="#帮助" class="headerlink" title="帮助"></a>帮助</h2><h4 id="man"><a href="#man" class="headerlink" title="man"></a>man</h4><pre><code>man ls  查看ls命令的官方手册</code></pre><h4 id="info"><a href="#info" class="headerlink" title="info"></a>info</h4><pre><code>info ls 查看ls命令的说明文档</code></pre><h4 id="–help"><a href="#–help" class="headerlink" title="–help"></a>–help</h4><pre><code>ls --help 查看ls命令常用参数</code></pre><h2 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h2><h4 id="创建-mkdir"><a href="#创建-mkdir" class="headerlink" title="创建(mkdir)"></a>创建(mkdir)</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>mkdir a</td>
+<td>当前目录下创建空目录a</td>
+</tr>
+<tr>
+<td>mkdir b c</td>
+<td>当前目录下创建空目录b和空目录c</td>
+</tr>
+<tr>
+<td>mkdir “d e”</td>
+<td>当前目录下创建空目录d e</td>
+</tr>
+<tr>
+<td>mkdir -p f/g/h</td>
+<td>当前目录下创建级联目录f/g/h(级联目录必须加-p)</td>
+</tr>
+<tr>
+<td>mkdir /opt/test</td>
+<td>在/opt目录下创建test目录</td>
+</tr>
+<tr>
+<td>#### 复制(cp)</td>
+<td></td>
+</tr>
+<tr>
+<td>命令</td>
+<td>含义</td>
+</tr>
+<tr>
+<td>———</td>
+<td>—————————————————–</td>
+</tr>
+<tr>
+<td>cp -r f a</td>
+<td>复制当前目录下f目录到当前目录下的a目录中(a目录存在)</td>
+</tr>
+<tr>
+<td>cp -r f g</td>
+<td>复制当前目录下的f目录为当前目录下的g目录(g目录不存在)</td>
+</tr>
+<tr>
+<td>注意：复制目录必须加-r</td>
+<td></td>
+</tr>
+<tr>
+<td>#### 剪切(mv)</td>
+<td></td>
+</tr>
+<tr>
+<td>命令</td>
+<td>含义</td>
+</tr>
+<tr>
+<td>——</td>
+<td>————————————————-</td>
+</tr>
+<tr>
+<td>mv g c</td>
+<td>剪切当前目录下g目录到当前目录下c目录中(c目录存在)</td>
+</tr>
+<tr>
+<td>mv a k</td>
+<td>重命名当前目录下a目录为k(k目录不存在)</td>
+</tr>
+<tr>
+<td>#### 删除</td>
+<td></td>
+</tr>
+<tr>
+<td>命令</td>
+<td>含义</td>
+</tr>
+<tr>
+<td>———-</td>
+<td>————————</td>
+</tr>
+<tr>
+<td>rmdir test</td>
+<td>删除当前目录下空目录test</td>
+</tr>
+<tr>
+<td>rm -r k</td>
+<td>删除当前目录下的k目录</td>
+</tr>
+<tr>
+<td>## 文件操作</td>
+<td></td>
+</tr>
+<tr>
+<td>#### 创建(touch)</td>
+<td></td>
+</tr>
+<tr>
+<td>命令</td>
+<td>含义</td>
+</tr>
+<tr>
+<td>——————-</td>
+<td>————————–</td>
+</tr>
+<tr>
+<td>touch passwd</td>
+<td>当前目录下创建空文件passwd</td>
+</tr>
+<tr>
+<td>touch /opt/user/opt</td>
+<td>目录下创建空文件user</td>
+</tr>
+</tbody></table>
+<p>重定向</p>
+<pre><code>&gt;    覆盖(删除文件中所有内容，加入新内容)
+&gt;&gt;   追加(文件末尾增加新内容) </code></pre><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>echo a&gt;b</td>
+<td>把a打印到文件b中(如果没有该文件，自动创建)</td>
+</tr>
+<tr>
+<td>echo c&gt;&gt;d</td>
+<td>追加c到文件d中(如果没有该文件，自动创建)</td>
+</tr>
+<tr>
+<td>#### 复制</td>
+<td></td>
+</tr>
+<tr>
+<td>cp user passwd b 复制当前目录下user和passwd文件到b目录中</td>
+<td></td>
+</tr>
+<tr>
+<td>cp user user1    复制当前目录下user文件为user1文件</td>
+<td></td>
+</tr>
+<tr>
+<td>#### 剪切</td>
+<td></td>
+</tr>
+<tr>
+<td>mv user* f      剪切user开头的文件到f目录下(f目录存在)</td>
+<td></td>
+</tr>
+<tr>
+<td>#### 删除</td>
+<td></td>
+</tr>
+<tr>
+<td>rm zhenshuai   删除当前目录下zhenshuai文件</td>
+<td></td>
+</tr>
+<tr>
+<td>rm -rf haleshao     强制删除haleshao文件</td>
+<td></td>
+</tr>
+<tr>
+<td>rm -rf *            删除当前目录下所有文件</td>
+<td></td>
+</tr>
+<tr>
+<td>#### 查看</td>
+<td></td>
+</tr>
+<tr>
+<td>cat   不分页显示文件内容</td>
+<td></td>
+</tr>
+<tr>
+<td>cat example.txt</td>
+<td></td>
+</tr>
+<tr>
+<td>less  分页显示文件内容，可以向上向下翻页</td>
+<td></td>
+</tr>
+<tr>
+<td>less example.txt</td>
+<td></td>
+</tr>
+<tr>
+<td>more  分页显示文件内容，只能向下翻页</td>
+<td></td>
+</tr>
+<tr>
+<td>more eexample.txt</td>
+<td></td>
+</tr>
+<tr>
+<td>head  查看文件前几行</td>
+<td></td>
+</tr>
+<tr>
+<td>head -3 example.txt</td>
+<td></td>
+</tr>
+<tr>
+<td>tail  查看文件后几行</td>
+<td></td>
+</tr>
+<tr>
+<td>tail -2 example.txt</td>
+<td></td>
+</tr>
+<tr>
+<td>vi    打开文件后不进行修改</td>
+<td></td>
+</tr>
+<tr>
+<td>#### 编辑</td>
+<td></td>
+</tr>
+<tr>
+<td>安装vim：  apt-get install vim</td>
+<td></td>
+</tr>
+</tbody></table>
+<p> <strong>vi/vim编辑器</strong></p>
+<h4 id="vi的模式"><a href="#vi的模式" class="headerlink" title="vi的模式"></a>vi的模式</h4><pre><code>命令模式
+编辑模式
+末行模式</code></pre><h4 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h4><h5 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h5><pre><code>G     光标跳转到文件末行行首
+gg    光标跳转到文件首行行首
+100gg 光标跳转到文件100行的行首
+^     光标跳转到本行行首
+$     光标跳转到本行行尾</code></pre><h5 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h5><pre><code>yy   复制当前行内容
+10yy 复制10行内容</code></pre><h5 id="粘贴"><a href="#粘贴" class="headerlink" title="粘贴"></a>粘贴</h5><pre><code>p</code></pre><h5 id="剪切-删除"><a href="#剪切-删除" class="headerlink" title="剪切/删除"></a>剪切/删除</h5><pre><code>dd   剪切/删除当前行内容
+10dd 剪切/删除10行内容</code></pre><h5 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h5><pre><code>/a    全文搜索a关键字
+?a    全文搜索a关键字</code></pre><h4 id="命令模式进入到编辑模式的方法"><a href="#命令模式进入到编辑模式的方法" class="headerlink" title="命令模式进入到编辑模式的方法"></a>命令模式进入到编辑模式的方法</h4><pre><code>i     光标所在位置进行插入，进入到编辑模式
+O  o
+S  s
+A  a</code></pre><h4 id="编辑模式"><a href="#编辑模式" class="headerlink" title="编辑模式"></a>编辑模式</h4><pre><code>编辑模式无法直接进入到末行模式，需要返回命令模式(esc)</code></pre><h4 id="末行模式"><a href="#末行模式" class="headerlink" title="末行模式"></a>末行模式</h4><pre><code>命令模式：
+:set nu    显示行号
+:set nonu  取消显示行号
+:w         保存、另存
+:q         退出
+:wq!       强制保存退出
+:1,$s/a/b/ 全文搜索a替换为b，只替换每行第一个
+:20s/a/b/g 20行搜索a替换为b，全部替换(末尾的g代表全部)</code></pre><h2 id="包、压缩文件、压缩包"><a href="#包、压缩文件、压缩包" class="headerlink" title="包、压缩文件、压缩包"></a>包、压缩文件、压缩包</h2><h4 id="包（tar）"><a href="#包（tar）" class="headerlink" title="包（tar）"></a>包（tar）</h4><h5 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h5><pre><code>创建的包文件通常以.tar结尾
+tar -cvf test.tar example download
+创建包文件test.tar,包含内容example和download</code></pre><h5 id="查看包"><a href="#查看包" class="headerlink" title="查看包"></a>查看包</h5><pre><code>tar -tvf test.tar
+查看包文件test.tar中所有文件属性信息</code></pre><h5 id="解包"><a href="#解包" class="headerlink" title="解包"></a>解包</h5><pre><code>tar -xvf test.tar
+解压包到当前目录下
+tar -xvf test.tar -C /opt
+解压包到指定目录下（需要加-C）</code></pre><h4 id="压缩文件-gzip"><a href="#压缩文件-gzip" class="headerlink" title="压缩文件(gzip)"></a>压缩文件(gzip)</h4><h5 id="查看文件大小"><a href="#查看文件大小" class="headerlink" title="查看文件大小"></a>查看文件大小</h5><pre><code>查看example文件的大小
+du -sh example</code></pre><h5 id="创建压缩文件-压缩文件不能压缩目录"><a href="#创建压缩文件-压缩文件不能压缩目录" class="headerlink" title="创建压缩文件(压缩文件不能压缩目录)"></a>创建压缩文件(压缩文件不能压缩目录)</h5><pre><code>压缩文件example
+gzip example</code></pre><h5 id="查看压缩文件"><a href="#查看压缩文件" class="headerlink" title="查看压缩文件"></a>查看压缩文件</h5><pre><code>查看example.gz压缩文件的属性
+gzip -l example.gz</code></pre><h5 id="解压压缩文件"><a href="#解压压缩文件" class="headerlink" title="解压压缩文件"></a>解压压缩文件</h5><pre><code>gzip -d example.gz</code></pre><h4 id="压缩包-tar"><a href="#压缩包-tar" class="headerlink" title="压缩包(tar)"></a>压缩包(tar)</h4><p>先打包后压缩,产生的文件一般为.tar.gz或者.tgz</p>
+<h5 id="创建压缩包"><a href="#创建压缩包" class="headerlink" title="创建压缩包"></a>创建压缩包</h5><pre><code>tar -czvf test.tar.gz example
+创建压缩包文件test.tar.gz包括example</code></pre><h5 id="查看压缩包"><a href="#查看压缩包" class="headerlink" title="查看压缩包"></a>查看压缩包</h5><pre><code>tar -tzvf test.tar.gz
+查看压缩包文件test.tar.gz内容</code></pre><h5 id="解压压缩包"><a href="#解压压缩包" class="headerlink" title="解压压缩包"></a>解压压缩包</h5><pre><code>tar -xzvf test.tar.gz
+解压压缩包文件test.tar.gz到当前目录下
+tar -xzvf test.tar.gz -C /optqiqq
+解压压缩包文件到/opt目录下</code></pre><h2 id="远程拷贝-scp"><a href="#远程拷贝-scp" class="headerlink" title="远程拷贝(scp)"></a>远程拷贝(scp)</h2><p>前提：目标电脑中一定安装了ssh服务，可以copy文件，目录</p>
+<pre><code>安装： apt-get install openssh-server
+scp 用户@ip:文件路径 本机路径
+scp chensw@192.168.7.139:/opt /
+
+chensw:用户名
+@192.168.7.139:目标ip
+/opt：复制目标主机的目录
+/：   复制到我电脑的哪里</code></pre><h4 id="远程连接linux"><a href="#远程连接linux" class="headerlink" title="远程连接linux"></a>远程连接linux</h4><pre><code>ssh 用户@ip</code></pre><h2 id="用户和权限"><a href="#用户和权限" class="headerlink" title="用户和权限"></a>用户和权限</h2><h3 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h3><pre><code>/etc/passwd  存放用户配置信息
+/etc/shadow  存放用户密码配置信息
+/etc/group   存放组配置信息
+组：属性，不同的用户拥有相同的属性
+a.创建用户
+     useradd simon  创建用户simon
+     passwd  simon  给simon用户添加密码
+b.修改用户
+     usermod -L simon 锁定用户simon
+     usermod -U simon 解锁用户simon
+c.删除用户
+     userdel -r simon 删除simon用户</code></pre><h3 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h3><pre><code>查看权限
+    ls -l examples.desktop 
+    -rw-r--r-- 1 chensw chensw 9194 7月  17 10:02 examples.desktop
+    1.文件类型  d：目录 -：普通文件
+    2-10.文件权限
+    11.文件节点
+    12.文件拥有者
+    13.拥有组
+    14.文件大小
+    15.最后修改时间
+    16.文件名
+
+常用权限
+    r(读)
+        文件：可以查看文件内容
+        目录：可以列表显示
+    w(写)
+        文件：可以修改文件内容
+        目录：可以在目录中创建、重命名、删除文件
+    x(执行)
+        文件：可以执行，一般来说是二进制文件
+        目录：可以进入
+
+权限分组
+    rw-            r--         r-- 
+    拥有者权限    拥有组权限     其他人权限
+    系统判断权限的方法：
+    1.判断用户是否为文件拥有者，如果是，赋予拥有者权限 
+    2.如果不是，判断用户是否为拥有组成员(id 用户)，如果是，赋予拥有组权限
+    3.如果都不是，赋予其他人权限
+    补充：查看组信息(id simon)
+
+权限的修改
+    chown  修改文件属主来修改权限
+    chmod  直接修改权限
+    d1.chmod修改权限
+        1&gt;字符类型修改
+        u  拥有者
+        g  拥有组
+        o  其他人
+        a  所有人
+         chmod u+x examples.desktop
+            修改文件权限，拥有者增加执行权限
+         chmod g+x,o+x examples.desktop
+            修改文件权限，拥有组和其他人增加执行权限
+         chmod a-x examples.desktop 
+            修改文件权限，所有人取消执行权限
+        2&gt;数字类型修改
+        r：4
+        w: 2
+        x: 1
+        -: 0
+         chmod 777 examples.desktop 
+            修改文件权限，所有人都拥有读写执行权限
+        udo chmod 000 examples.desktop 
+            修改文件权限，所有人没有任何权限
+    d2.chown
+         chown zelin examples.desktop 
+            修改文件拥有者位zelin
+         chown :bin examples.desktop
+            修改文件拥有组为bin
+         chown chensw:chensw examples.desktop 
+            修改文件拥有者是chensw，拥有组是chensw</code></pre><h2 id="搜索和管道"><a href="#搜索和管道" class="headerlink" title="搜索和管道"></a>搜索和管道</h2><h4 id="find-搜索到系统中所有文件，相对慢"><a href="#find-搜索到系统中所有文件，相对慢" class="headerlink" title="find(搜索到系统中所有文件，相对慢)"></a>find(搜索到系统中所有文件，相对慢)</h4><pre><code>find /etc -name passwd 在/etc/目录下搜索名字位passwd的文件
+find /etc -name *.conf 在/etc/目录下搜索以.conf结尾的文件</code></pre><h4 id="locate-搜索到系统中所有文件，相对比较快，缺点是需要刷新系统数据库"><a href="#locate-搜索到系统中所有文件，相对比较快，缺点是需要刷新系统数据库" class="headerlink" title="locate(搜索到系统中所有文件，相对比较快，缺点是需要刷新系统数据库)"></a>locate(搜索到系统中所有文件，相对比较快，缺点是需要刷新系统数据库)</h4><pre><code>updatedb  刷新系统数据库</code></pre><h4 id="grep-搜内容"><a href="#grep-搜内容" class="headerlink" title="grep(搜内容)"></a>grep(搜内容)</h4><pre><code>grep root /etc/passwd 搜索/etc/passwd中含有root的行
+grep ^r /etc/passwd  搜索/etc/passwd中以r开头的行
+grep bash$ /etc/passwd 搜索/etc/passwd中以bash结尾的行</code></pre><h4 id="管道"><a href="#管道" class="headerlink" title="管道 |"></a>管道 |</h4><pre><code>前面的输出作为后面的输入
+cat /etc/passwd | grep root
+查看一个文件第7行数据</code></pre><p>head -7 examples.desktop | tail</p>
+<h2 id="管理命令"><a href="#管理命令" class="headerlink" title="管理命令"></a>管理命令</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ifconfig</td>
+<td>查看网卡信息</td>
+</tr>
+<tr>
+<td>ping</td>
+<td>测试网络连接(跟ip地址或者域名)</td>
+</tr>
+<tr>
+<td>nslookup</td>
+<td><a target="_blank" rel="noopener" href="http://www.baidu.com">www.baidu.com</a>(解析baidu的ip  域名–IP)</td>
+</tr>
+<tr>
+<td>top</td>
+<td>监控系统资源</td>
+</tr>
+<tr>
+<td>ps -ef</td>
+<td>查看系统进程</td>
+</tr>
+<tr>
+<td>ps -ef | grep sshd</td>
+<td>查看ssh进程是否运行正常</td>
+</tr>
+<tr>
+<td>ps -ef | grep tomcat</td>
+<td>查看tomcat进程是否正常</td>
+</tr>
+<tr>
+<td>ps -ef | grep mysqld</td>
+<td>查看mysqld进程是否正常</td>
+</tr>
+<tr>
+<td>ps -ef | grep java</td>
+<td>查看java相关进程是否正常</td>
+</tr>
+<tr>
+<td>netstat -an</td>
+<td>查看系统中所有端口信息</td>
+</tr>
+<tr>
+<td></td>
+<td>mysql   3306</td>
+</tr>
+<tr>
+<td></td>
+<td>apache  80</td>
+</tr>
+<tr>
+<td></td>
+<td>tomcat  8080</td>
+</tr>
+<tr>
+<td></td>
+<td>oracle  1521</td>
+</tr>
+<tr>
+<td></td>
+<td>ssh     22</td>
+</tr>
+<tr>
+<td>netstat -an | grep 22</td>
+<td>查看sshd的端口是否运行正常</td>
+</tr>
+<tr>
+<td>free -m</td>
+<td>查看系统内存情况</td>
+</tr>
+<tr>
+<td>df -h</td>
+<td>查看磁盘使用率</td>
+</tr>
+<tr>
+<td>mount</td>
+<td>查看系统挂载情况</td>
+</tr>
+<tr>
+<td>vmstat</td>
+<td>监控系统资源</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"># linux</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/06/20/vee-validate%E5%9B%BD%E9%99%85%E5%8C%96/" rel="prev" title="vee-validate国际化">
+      <i class="fa fa-chevron-left"></i> vee-validate国际化
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/06/21/UTC%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%9C%AC%E5%9C%B0%E6%97%B6%E9%97%B4/" rel="next" title="UTC时间转换为本地时间">
+      UTC时间转换为本地时间 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="nav-number">1.</span> <span class="nav-text">文件和目录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Linux-%E7%9B%AE%E5%BD%95"><span class="nav-number">1.1.</span> <span class="nav-text">1.Linux 目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%88%E7%AB%AF%E7%AE%80%E4%BB%8B"><span class="nav-number">1.2.</span> <span class="nav-text">终端简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4"><span class="nav-number">1.3.</span> <span class="nav-text">基本命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#who"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">who</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">切换到指定目录</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%AE%E5%8A%A9"><span class="nav-number">1.4.</span> <span class="nav-text">帮助</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#man"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">man</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#info"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">info</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%80%93help"><span class="nav-number">1.4.0.3.</span> <span class="nav-text">–help</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C"><span class="nav-number">1.5.</span> <span class="nav-text">目录操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA-mkdir"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">创建(mkdir)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vi%E7%9A%84%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">vi的模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.5.0.3.</span> <span class="nav-text">命令模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%B7%B3%E8%BD%AC"><span class="nav-number">1.5.0.3.1.</span> <span class="nav-text">跳转</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%8D%E5%88%B6"><span class="nav-number">1.5.0.3.2.</span> <span class="nav-text">复制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%B2%98%E8%B4%B4"><span class="nav-number">1.5.0.3.3.</span> <span class="nav-text">粘贴</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%89%AA%E5%88%87-%E5%88%A0%E9%99%A4"><span class="nav-number">1.5.0.3.4.</span> <span class="nav-text">剪切&#x2F;删除</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2"><span class="nav-number">1.5.0.3.5.</span> <span class="nav-text">搜索</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F%E8%BF%9B%E5%85%A5%E5%88%B0%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.5.0.4.</span> <span class="nav-text">命令模式进入到编辑模式的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.5.0.5.</span> <span class="nav-text">编辑模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AB%E8%A1%8C%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.5.0.6.</span> <span class="nav-text">末行模式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E3%80%81%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6%E3%80%81%E5%8E%8B%E7%BC%A9%E5%8C%85"><span class="nav-number">1.6.</span> <span class="nav-text">包、压缩文件、压缩包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%85%EF%BC%88tar%EF%BC%89"><span class="nav-number">1.6.0.1.</span> <span class="nav-text">包（tar）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%89%93%E5%8C%85"><span class="nav-number">1.6.0.1.1.</span> <span class="nav-text">打包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%8C%85"><span class="nav-number">1.6.0.1.2.</span> <span class="nav-text">查看包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A7%A3%E5%8C%85"><span class="nav-number">1.6.0.1.3.</span> <span class="nav-text">解包</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6-gzip"><span class="nav-number">1.6.0.2.</span> <span class="nav-text">压缩文件(gzip)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F"><span class="nav-number">1.6.0.2.1.</span> <span class="nav-text">查看文件大小</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6-%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6%E4%B8%8D%E8%83%BD%E5%8E%8B%E7%BC%A9%E7%9B%AE%E5%BD%95"><span class="nav-number">1.6.0.2.2.</span> <span class="nav-text">创建压缩文件(压缩文件不能压缩目录)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6"><span class="nav-number">1.6.0.2.3.</span> <span class="nav-text">查看压缩文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A7%A3%E5%8E%8B%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6"><span class="nav-number">1.6.0.2.4.</span> <span class="nav-text">解压压缩文件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E5%8C%85-tar"><span class="nav-number">1.6.0.3.</span> <span class="nav-text">压缩包(tar)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%8E%8B%E7%BC%A9%E5%8C%85"><span class="nav-number">1.6.0.3.1.</span> <span class="nav-text">创建压缩包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%8E%8B%E7%BC%A9%E5%8C%85"><span class="nav-number">1.6.0.3.2.</span> <span class="nav-text">查看压缩包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A7%A3%E5%8E%8B%E5%8E%8B%E7%BC%A9%E5%8C%85"><span class="nav-number">1.6.0.3.3.</span> <span class="nav-text">解压压缩包</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E6%8B%B7%E8%B4%9D-scp"><span class="nav-number">1.7.</span> <span class="nav-text">远程拷贝(scp)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5linux"><span class="nav-number">1.7.0.1.</span> <span class="nav-text">远程连接linux</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E5%92%8C%E6%9D%83%E9%99%90"><span class="nav-number">1.8.</span> <span class="nav-text">用户和权限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7"><span class="nav-number">1.8.1.</span> <span class="nav-text">用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%83%E9%99%90"><span class="nav-number">1.8.2.</span> <span class="nav-text">权限</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E5%92%8C%E7%AE%A1%E9%81%93"><span class="nav-number">1.9.</span> <span class="nav-text">搜索和管道</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#find-%E6%90%9C%E7%B4%A2%E5%88%B0%E7%B3%BB%E7%BB%9F%E4%B8%AD%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%EF%BC%8C%E7%9B%B8%E5%AF%B9%E6%85%A2"><span class="nav-number">1.9.0.1.</span> <span class="nav-text">find(搜索到系统中所有文件，相对慢)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#locate-%E6%90%9C%E7%B4%A2%E5%88%B0%E7%B3%BB%E7%BB%9F%E4%B8%AD%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%EF%BC%8C%E7%9B%B8%E5%AF%B9%E6%AF%94%E8%BE%83%E5%BF%AB%EF%BC%8C%E7%BC%BA%E7%82%B9%E6%98%AF%E9%9C%80%E8%A6%81%E5%88%B7%E6%96%B0%E7%B3%BB%E7%BB%9F%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.9.0.2.</span> <span class="nav-text">locate(搜索到系统中所有文件，相对比较快，缺点是需要刷新系统数据库)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#grep-%E6%90%9C%E5%86%85%E5%AE%B9"><span class="nav-number">1.9.0.3.</span> <span class="nav-text">grep(搜内容)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%A1%E9%81%93"><span class="nav-number">1.9.0.4.</span> <span class="nav-text">管道 |</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4"><span class="nav-number">1.10.</span> <span class="nav-text">管理命令</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">琴客</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">琴客</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,23 +1,1071 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block title %}{{ title }}{% if theme.index_with_subtitle and subtitle %} – {{ subtitle }}{% endif %}{% endblock %}
+<link rel="stylesheet" href="/css/main.css">
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
 
-{% block content %}
-  <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
-  </section>
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.chensw.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+  <meta property="og:type" content="website">
+<meta property="og:title" content="琴客的个人博客">
+<meta property="og:url" content="https://www.chensw.top/index.html">
+<meta property="og:site_name" content="琴客的个人博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="琴客">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://www.chensw.top/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>琴客的个人博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">琴客的个人博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2019/07/06/%E6%94%B6%E8%97%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/06/%E6%94%B6%E8%97%8F/" class="post-title-link" itemprop="url">收藏网页</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-06 22:55:03" itemprop="dateCreated datePublished" datetime="2019-07-06T22:55:03+08:00">2019-07-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Charles破解"><a href="#Charles破解" class="headerlink" title="Charles破解"></a><a target="_blank" rel="noopener" href="https://www.zzzmode.com/mytools/charles/">Charles破解</a></h2><h2 id="近期iOS打开H5页面非常慢的原因"><a href="#近期iOS打开H5页面非常慢的原因" class="headerlink" title="近期iOS打开H5页面非常慢的原因"></a><a target="_blank" rel="noopener" href="https://my.oschina.net/swingcoder/blog/4277977">近期iOS打开H5页面非常慢的原因</a></h2><h2 id="记录一次开启-OCSP-stapling-解决app内webview加载慢的问题-letsencrypt"><a href="#记录一次开启-OCSP-stapling-解决app内webview加载慢的问题-letsencrypt" class="headerlink" title="记录一次开启 OCSP stapling 解决app内webview加载慢的问题 letsencrypt"></a><a target="_blank" rel="noopener" href="https://juejin.im/post/6844904135653851150">记录一次开启 OCSP stapling 解决app内webview加载慢的问题 letsencrypt</a></h2><h2 id="Vue动态修改网页标题"><a href="#Vue动态修改网页标题" class="headerlink" title="Vue动态修改网页标题"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xyb0226/p/10991019.html">Vue动态修改网页标题</a></h2><h2 id="sass之mixin的全局引入（vue3-0）"><a href="#sass之mixin的全局引入（vue3-0）" class="headerlink" title="sass之mixin的全局引入（vue3.0）"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/chensunxu/article/details/104043205">sass之mixin的全局引入（vue3.0）</a></h2><h2 id="利用contenteditable做一个vue属性的输入框"><a href="#利用contenteditable做一个vue属性的输入框" class="headerlink" title="利用contenteditable做一个vue属性的输入框"></a><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c79f99e5fa93">利用contenteditable做一个vue属性的输入框</a></h2><h2 id="解决移动端滚动穿透"><a href="#解决移动端滚动穿透" class="headerlink" title="解决移动端滚动穿透"></a><a target="_blank" rel="noopener" href="https://juejin.im/post/5c4974f0518825260c5d1851">解决移动端滚动穿透</a></h2><h2 id="AutoRclone配合gclone突破GoogleTeamDrive750G流量限制"><a href="#AutoRclone配合gclone突破GoogleTeamDrive750G流量限制" class="headerlink" title="AutoRclone配合gclone突破GoogleTeamDrive750G流量限制"></a><a target="_blank" rel="noopener" href="https://www.uud.me/qiwenzalun/autorclone-gclone.html">AutoRclone配合gclone突破GoogleTeamDrive750G流量限制</a></h2><h2 id="Rclone-进阶使用教程-使用自建-API-连接-OneDrive"><a href="#Rclone-进阶使用教程-使用自建-API-连接-OneDrive" class="headerlink" title="Rclone 进阶使用教程 - 使用自建 API 连接 OneDrive"></a><a target="_blank" rel="noopener" href="https://p3terx.com/archives/rclone-connect-onedrive-with-selfbuilt-api.html">Rclone 进阶使用教程 - 使用自建 API 连接 OneDrive</a></h2><h2 id="手机端页面自适应解决方案—rem布局进阶版（附源码示例）"><a href="#手机端页面自适应解决方案—rem布局进阶版（附源码示例）" class="headerlink" title="手机端页面自适应解决方案—rem布局进阶版（附源码示例）"></a><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/985d26b40199">手机端页面自适应解决方案—rem布局进阶版（附源码示例）</a></h2><h2 id="深入理解javascript中的事件循环event-loop"><a href="#深入理解javascript中的事件循环event-loop" class="headerlink" title="深入理解javascript中的事件循环event-loop"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaohuochai/p/8527618.html">深入理解javascript中的事件循环event-loop</a></h2><h2 id="CSS3-新单位vw、vh、vmin、vmax使用详解（附样例）"><a href="#CSS3-新单位vw、vh、vmin、vmax使用详解（附样例）" class="headerlink" title="CSS3 - 新单位vw、vh、vmin、vmax使用详解（附样例）"></a><a target="_blank" rel="noopener" href="http://www.hangge.com/blog/cache/detail_1715.html">CSS3 - 新单位vw、vh、vmin、vmax使用详解（附样例）</a></h2><h2 id="最详细的Vuex教程"><a href="#最详细的Vuex教程" class="headerlink" title="最详细的Vuex教程"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/h5_queenstyle12/article/details/75386359">最详细的Vuex教程</a></h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/06/%E6%94%B6%E8%97%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2020/12/08/git%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%85%B3%E8%81%94%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/08/git%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%85%B3%E8%81%94%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/" class="post-title-link" itemprop="url">git本地仓库关联远程仓库</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-08 10:48:49" itemprop="dateCreated datePublished" datetime="2020-12-08T10:48:49+08:00">2020-12-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="情景"><a href="#情景" class="headerlink" title="情景"></a>情景</h2><p>有时候现在本地开发，远程仓库还未创建，需要把现有本地仓库与远程仓库关联起来。</p>
+<h2 id="本地仓库创建"><a href="#本地仓库创建" class="headerlink" title="本地仓库创建"></a>本地仓库创建</h2><p>本地先创建一个项目</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &#39;备注&#39;</span><br></pre></td></tr></table></figure>
+<h2 id="远程仓库创建"><a href="#远程仓库创建" class="headerlink" title="远程仓库创建"></a>远程仓库创建</h2><p>直接在远程仓库创建一个仓库</p>
+<h2 id="关联仓库"><a href="#关联仓库" class="headerlink" title="关联仓库"></a>关联仓库</h2><p>关联：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin 远程仓库地址</span><br></pre></td></tr></table></figure>
+
+<p>推送到远程仓库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2020/07/17/%E5%BE%AE%E4%BF%A1%E5%86%85ios%E9%95%BF%E6%8C%89%E4%BA%8C%E7%BB%B4%E7%A0%81%E4%B8%8D%E8%AF%86%E5%88%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/17/%E5%BE%AE%E4%BF%A1%E5%86%85ios%E9%95%BF%E6%8C%89%E4%BA%8C%E7%BB%B4%E7%A0%81%E4%B8%8D%E8%AF%86%E5%88%AB/" class="post-title-link" itemprop="url">微信内ios长按二维码不识别</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-17 11:07:45" itemprop="dateCreated datePublished" datetime="2020-07-17T11:07:45+08:00">2020-07-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在微信ios版本中长按二维码不识别，初步搜索到的原因是iphone默认的菜单行为阻止了识别。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>在有需要的标签下添加以下属性禁用菜单：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">-webkit-touch-callout</span>: <span class="selector-tag">none</span>;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2020/05/29/jellyfin%E5%AE%89%E8%A3%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/29/jellyfin%E5%AE%89%E8%A3%85/" class="post-title-link" itemprop="url">jellyfin安装</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-29 14:24:11" itemprop="dateCreated datePublished" datetime="2020-05-29T14:24:11+08:00">2020-05-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="CentOs7下安装"><a href="#CentOs7下安装" class="headerlink" title="CentOs7下安装"></a>CentOs7下安装</h2><h3 id="使用Docker安装"><a href="#使用Docker安装" class="headerlink" title="使用Docker安装"></a>使用Docker安装</h3><ol>
+<li>获取jellyfin镜像</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull jellyfin/jellyfin</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>创建jellyfin需要的配置文件目录和缓存目录</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /opt/jellyfin/config</span><br><span class="line">mkdir -p /opt/jellyfin/cache</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>运行jellyfin服务</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 8096:8096 -v /jellyfin/config:/config -v /home/gdscu/:/media jellyfin/jellyfin</span><br></pre></td></tr></table></figure>
+
+<p>参数说明：</p>
+<blockquote>
+<ol>
+<li>-p 后面是jellyfin服务的端口号，安装时可以指定，这里使用默认的8096;</li>
+<li>-v 后面是指定的配置路径，比如/home/gdscu/就是我原来的影音物理路径，/media就是jellyfin的映射路径</li>
+</ol>
+</blockquote>
+<p>安装完成后可通过 <a href="http://ip地址:8096来访问，本地可用http://127.0.0.1:8086访问。">http://ip地址:8096来访问，本地可用http://127.0.0.1:8086访问。</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2020/05/29/gclone%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E5%8F%8A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/29/gclone%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E5%8F%8A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">gclone安装使用及常用命令</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-29 10:31:51" itemprop="dateCreated datePublished" datetime="2020-05-29T10:31:51+08:00">2020-05-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="gclone-安装"><a href="#gclone-安装" class="headerlink" title="gclone 安装"></a>gclone 安装</h2><p>gclone 其实就是 rclone 的加强版，为Google Drive 操作增加自动切换账户和命令行根目录id操作支持<br>其他功能与原版 rclone 相同，安装了之后也是可以使用rclone的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(wget -qO- https://git.io/gclone.sh)</span><br></pre></td></tr></table></figure>
+
+<h2 id="gclone-配置"><a href="#gclone-配置" class="headerlink" title="gclone 配置"></a>gclone 配置</h2><p>使用命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gclone config</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="gclone使用"><a href="#gclone使用" class="headerlink" title="gclone使用"></a>gclone使用</h2><ul>
+<li>复制文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gclone copy gd:&#123;目录id&#125; gd:&#123;目录id&#125; --drive-server-side-across-configs -v</span><br></pre></td></tr></table></figure></li>
+<li>-drive-server-side-across-configs 用于谷歌盘之间传输时使用，不走服务器流量，传输速度也更快</li>
+</ul>
+<p>-v 显示详细日志</p>
+<p>-P 显示进度</p>
+<ul>
+<li>去除重复文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gclone dedupe gd:/xxx/xxx/ (路径) -P</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="rclone-挂载-Google-Drive"><a href="#rclone-挂载-Google-Drive" class="headerlink" title="rclone 挂载 Google Drive"></a>rclone 挂载 Google Drive</h2><p>基本挂载命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rclone mount remote:path /path/to/mountpoint [flags]</span><br></pre></td></tr></table></figure>
+<p>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">rclone mount gdrive1: /home/gdrive1 \</span><br><span class="line"> --<span class="built_in">umask</span> 0000 \   <span class="comment">#  --umask int 覆盖文件系统设置的权限位</span></span><br><span class="line"> --default-permissions \  <span class="comment">##  使内核执行基于文件模式的访问控制</span></span><br><span class="line"> --allow-non-empty \  <span class="comment"># 允许在非空目录(不是Windows)上挂载</span></span><br><span class="line"> --allow-other \ <span class="comment"># 允许其他用户访问</span></span><br><span class="line"> --buffer-size 32M \  <span class="comment">#  在读取每个文件时的内存缓冲区大小——传输。(默认16M)</span></span><br><span class="line"> --dir-cache-time 12h \  <span class="comment">#  缓存目录项的时间。(默认5m0s)</span></span><br><span class="line"> --vfs-read-chunk-size 64M \ <span class="comment">#  以块的形式读取源对象。(默认128M)</span></span><br><span class="line"> --vfs-read-chunk-size-limit 1G &amp; <span class="comment"># 如果大于 ——vfs-read-chunk-size，则在每个块读取后将块大小加倍，直到达到限制。“off”是无限的。(默认 off)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="rclone-自动挂载"><a href="#rclone-自动挂载" class="headerlink" title="rclone 自动挂载"></a>rclone 自动挂载</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; /etc/systemd/system/rclone.service &lt;&lt;<span class="string">EOF</span></span><br><span class="line"><span class="string">[Unit]</span></span><br><span class="line"><span class="string">Description=Rclone</span></span><br><span class="line"><span class="string">AssertPathIsDirectory=LocalFolder</span></span><br><span class="line"><span class="string">After=network-online.target</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Service]</span></span><br><span class="line"><span class="string">Type=simple</span></span><br><span class="line"><span class="string">ExecStart=/usr/bin/rclone mount gdrive1: /home/gdrive1 \</span></span><br><span class="line"><span class="string"> --umask 0000 \</span></span><br><span class="line"><span class="string"> --default-permissions \</span></span><br><span class="line"><span class="string"> --allow-non-empty \</span></span><br><span class="line"><span class="string"> --allow-other \</span></span><br><span class="line"><span class="string"> --buffer-size 32M \</span></span><br><span class="line"><span class="string"> --dir-cache-time 12h \</span></span><br><span class="line"><span class="string"> --vfs-read-chunk-size 64M \</span></span><br><span class="line"><span class="string"> --vfs-read-chunk-size-limit 1G</span></span><br><span class="line"><span class="string">ExecStop=/bin/fusermount -u LocalFolder</span></span><br><span class="line"><span class="string">Restart=on-abort</span></span><br><span class="line"><span class="string">User=root</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Install]</span></span><br><span class="line"><span class="string">WantedBy=default.target</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
+
+<p>设置启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start rclone</span><br></pre></td></tr></table></figure>
+
+<p>开机启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> rclone</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="rclone-mount-报错"><a href="#rclone-mount-报错" class="headerlink" title="rclone mount 报错"></a>rclone mount 报错</h2><p>报错内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Fatal error: failed to mount FUSE fs: fusermount: <span class="built_in">exec</span>: <span class="string">&quot;fusermount&quot;</span>: executable file not found <span class="keyword">in</span> <span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+<p>解决办法：</p>
+<ul>
+<li>CentOS<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum insstall fuse</span><br></pre></td></tr></table></figure></li>
+<li>Debian/Ubuntu<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install fuse</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2020/05/09/js%E6%8E%A7%E5%88%B6%E5%A4%9A%E8%A1%8C%E5%86%85%E5%AE%B9%E5%B1%95%E5%BC%80%E6%8A%98%E5%8F%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/09/js%E6%8E%A7%E5%88%B6%E5%A4%9A%E8%A1%8C%E5%86%85%E5%AE%B9%E5%B1%95%E5%BC%80%E6%8A%98%E5%8F%A0/" class="post-title-link" itemprop="url">js控制多行内容展开折叠</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-09 14:29:41" itemprop="dateCreated datePublished" datetime="2020-05-09T14:29:41+08:00">2020-05-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>一段文字说明，多行文字时只显示一行，并显示展开/折叠图标，可以展开/折叠，一行时则不显示图标。</p>
+<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><p>展开/折叠的功能就比较简单，设置内容固定宽高，高度设置为一行高，默认1.5em，当点击展开时，高度设置为100%或者auto即可，折叠时高度恢复为一行高，记得要设置overflow为hidden。</p>
+<p>比较麻烦的是只有一行时，不需要显示展开/折叠按钮，这时候可以获取元素的scrollHeight和clientHeight作对比。</p>
+<pre><code>element.scrollHeight    内容的实际高度
+element.clientHeight    内容的显示高度</code></pre><p>如果element.scrollHeight&gt;element.clientHeight,则显示展开/折叠按钮，反之则不显示。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2020/04/08/js%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/08/js%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-title-link" itemprop="url">js常用正则表达式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-08 10:19:46" itemprop="dateCreated datePublished" datetime="2020-04-08T10:19:46+08:00">2020-04-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在一些业务中经常需要校验数据的类型，如邮箱、手机号等，在此记录常用正则表达式。</p>
+<ul>
+<li>邮箱</li>
+</ul>
+<p>/\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+.)+[A-Za-z]{2,14}/</p>
+<ul>
+<li>手机号码</li>
+</ul>
+<p>/(13\d|14[579]|15[^4\D]|17[^49\D]|18\d)\d{8}/</p>
+<ul>
+<li>身份证号码</li>
+</ul>
+<p>/\d{17}[0-9Xx]|\d{15}/</p>
+<ul>
+<li>匹配中文</li>
+</ul>
+<p>/[\u4e00-\u9fa5]+/</p>
+<ul>
+<li>必须包含数字和英文</li>
+</ul>
+<p>/^(?=.*[a-zA-Z]+)(?=.*[0-9]+)\S+$/</p>
+<h3 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h3><p>1.理解?= 和 ?! 表达式中的符号， 需要理解前瞻，后顾，负前瞻，负后顾：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 前瞻：</span></span><br><span class="line">exp1(?=exp2) 查找exp2前面的exp1</span><br><span class="line"><span class="comment">// 后顾：</span></span><br><span class="line">(?&lt;=exp2)exp1 查找exp2后面的exp1</span><br><span class="line"><span class="comment">// 负前瞻：</span></span><br><span class="line">exp1(?!exp2) 查找后面不是exp2的exp1</span><br><span class="line"><span class="comment">// 负后顾：</span></span><br><span class="line">(?&lt;!exp2)exp1 查找前面不是exp2的exp1</span><br></pre></td></tr></table></figure>
+
+<p>2.理解 ?: 符号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">()表示捕获分组，()会把每个分组里的匹配的值保存起来，使用$n(n是一个数字，表示第n个捕获组的内容)</span><br><span class="line">(?:)表示非捕获分组，和捕获分组唯一的区别在于，非捕获分组匹配的值不会保存起来</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2020/03/24/chrome%E8%BF%9B%E8%A1%8C%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/24/chrome%E8%BF%9B%E8%A1%8C%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95/" class="post-title-link" itemprop="url">chrome进行微信浏览器真机调试</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-24 15:24:01" itemprop="dateCreated datePublished" datetime="2020-03-24T15:24:01+08:00">2020-03-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1、在微信打开 <a target="_blank" rel="noopener" href="http://debugx5.qq.com">http://debugx5.qq.com</a></p>
+<p>如果有错误，先访问 <a target="_blank" rel="noopener" href="http://debugmm.qq.com/?forcex5=true">http://debugmm.qq.com/?forcex5=true</a> ，再进入 <a target="_blank" rel="noopener" href="http://debugtbs.qq.com">http://debugtbs.qq.com</a> 选择 “安装线上内核”。</p>
+<p>2、在<a target="_blank" rel="noopener" href="http://debugx5.qq.com页面信息选项卡，勾选“打开TBS内核Inspector调试功能”。">http://debugx5.qq.com页面信息选项卡，勾选“打开TBS内核Inspector调试功能”。</a></p>
+<p>3、然后 USB 连接手机、电脑，打开开发者模式，打开 USB 调试，然后在 Chrome 中进入 chrome://inspect/#devices 页面，就能看到设备打开的网页了。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2020/03/06/div%E6%A8%A1%E6%8B%9Ftextarea%EF%BC%8C%E6%96%87%E6%9C%AC%E5%86%85%E6%95%8F%E6%84%9F%E5%AD%97%E6%98%BE%E7%A4%BA%E9%AB%98%E4%BA%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/06/div%E6%A8%A1%E6%8B%9Ftextarea%EF%BC%8C%E6%96%87%E6%9C%AC%E5%86%85%E6%95%8F%E6%84%9F%E5%AD%97%E6%98%BE%E7%A4%BA%E9%AB%98%E4%BA%AE/" class="post-title-link" itemprop="url">vue内div模拟textarea，文本内敏感字显示高亮</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-06 14:49:30" itemprop="dateCreated datePublished" datetime="2020-03-06T14:49:30+08:00">2020-03-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>手动调整 div 元素的高度：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">resize</span>:both;</span><br><span class="line"><span class="attribute">overflow</span>:auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">&quot;textarea&quot;</span> <span class="attr">class</span>=<span class="string">&quot;textarea-test&quot;</span> <span class="attr">contenteditable</span>=<span class="string">&#x27;true&#x27;</span> @<span class="attr">keydown</span>=<span class="string">&quot;keydown&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            sensitiveWords: [<span class="string">&#x27;敏感词1&#x27;</span>, <span class="string">&#x27;敏感词2&#x27;</span>],</span><br><span class="line">            highRiskWords: [<span class="string">&#x27;高危词1&#x27;</span>，<span class="string">&#x27;高危词2&#x27;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methon: &#123;</span><br><span class="line">        <span class="comment">// 高危词</span></span><br><span class="line">        <span class="function"><span class="title">highRiskKeys</span>(<span class="params">keys</span>)</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (!<span class="built_in">this</span>.highRiskKeys.$map) &#123;</span><br><span class="line">                <span class="keyword">var</span> map = &#123;&#125;;</span><br><span class="line">                <span class="keyword">var</span> maxLength = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>; i &lt; keys.length; i++) &#123;</span><br><span class="line">                    map[keys[i]] = <span class="number">1</span>;</span><br><span class="line">                    maxLength = <span class="built_in">Math</span>.max(keys[i].length, maxLength);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">this</span>.highRiskKeys.$map = &#123;</span><br><span class="line">                    map : map,</span><br><span class="line">                    length : maxLength</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">this</span>.highRiskKeys.$map;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 敏感词</span></span><br><span class="line">        <span class="function"><span class="title">sensitiveKeys</span>(<span class="params">keys</span>)</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (!<span class="built_in">this</span>.sensitiveKeys.$map) &#123;</span><br><span class="line">                <span class="keyword">var</span> map = &#123;&#125;;</span><br><span class="line">                <span class="keyword">var</span> maxLength = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>; i &lt; keys.length; i++) &#123;</span><br><span class="line">                    map[keys[i]] = <span class="number">1</span>;</span><br><span class="line">                    maxLength = <span class="built_in">Math</span>.max(keys[i].length, maxLength);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">this</span>.sensitiveKeys.$map = &#123;</span><br><span class="line">                    map : map,</span><br><span class="line">                    length : maxLength</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">this</span>.sensitiveKeys.$map;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">// 高危词、敏感词高亮</span></span><br><span class="line">        <span class="function"><span class="title">colorKeyword</span>(<span class="params">str</span>)</span> &#123;            </span><br><span class="line"></span><br><span class="line">                <span class="keyword">var</span> words = <span class="built_in">this</span>.sensitiveKeys(<span class="built_in">this</span>.sensitiveWords);</span><br><span class="line">                <span class="keyword">var</span> highRisk = <span class="built_in">this</span>.highRiskKeys(<span class="built_in">this</span>.highRiskWords);</span><br><span class="line">                <span class="keyword">var</span> output = [];</span><br><span class="line">                <span class="keyword">var</span> output2 = [];</span><br><span class="line">                <span class="keyword">while</span> (str) &#123;                  </span><br><span class="line">                    <span class="keyword">let</span> sub = str.substring(<span class="number">0</span>, words.length);</span><br><span class="line">                    str = str.substring(words.length);</span><br><span class="line">                    <span class="keyword">while</span> (!words.map[sub] &amp;&amp; sub) &#123;</span><br><span class="line">                        str = sub.charAt(sub.length - <span class="number">1</span>) + str;</span><br><span class="line">                        sub = sub.slice(<span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">//console.log(&#x27;color&#x27;, sub);</span></span><br><span class="line">                    <span class="keyword">if</span> (sub) &#123;</span><br><span class="line">                        output.push( <span class="string">&#x27;&lt;span style=&quot;background-color:#FEEB6E;&quot;&gt;&#x27;</span>, sub, <span class="string">&#x27;&lt;/span&gt;&#x27;</span>);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        output.push(str.charAt(<span class="number">0</span>));</span><br><span class="line">                        str = str.substring(<span class="number">1</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                output = output.join(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">                <span class="keyword">while</span>(output) &#123;</span><br><span class="line">                    <span class="keyword">let</span> sub = output.substring(<span class="number">0</span>, highRisk.length);</span><br><span class="line">                    output = output.substring(highRisk.length);</span><br><span class="line">                    <span class="keyword">while</span> (!highRisk.map[sub] &amp;&amp; sub) &#123;</span><br><span class="line">                        output = sub.charAt(sub.length - <span class="number">1</span>) + output;</span><br><span class="line">                        sub = sub.slice(<span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">//console.log(&#x27;color&#x27;, sub);</span></span><br><span class="line">                    <span class="keyword">if</span> (sub) &#123;</span><br><span class="line">                        output2.push( <span class="string">&#x27;&lt;span style=&quot;background-color:#FE6E6E;&quot;&gt;&#x27;</span>, sub, <span class="string">&#x27;&lt;/span&gt;&#x27;</span>);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        output2.push(output.charAt(<span class="number">0</span>));</span><br><span class="line">                        output = output.substring(<span class="number">1</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> output2.join(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 自定义div编辑框光标处插入文本</span></span><br><span class="line">         <span class="function"><span class="title">insertAtCursor</span>(<span class="params">myField, myValue</span>)</span> &#123; </span><br><span class="line">            <span class="keyword">let</span> selection = getSelection()</span><br><span class="line">            <span class="keyword">let</span> lastEditRange = selection.getRangeAt(<span class="number">0</span>)</span><br><span class="line">            <span class="comment">// 判断是否有最后光标对象存在</span></span><br><span class="line">            <span class="keyword">if</span> (lastEditRange) &#123;</span><br><span class="line">                <span class="comment">// 存在最后光标对象，选定对象清除所有光标并添加最后光标还原之前的状态</span></span><br><span class="line">                selection.removeAllRanges()</span><br><span class="line">                selection.addRange(lastEditRange)</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 判断选定对象范围是编辑框还是文本节点</span></span><br><span class="line">            <span class="keyword">if</span> (selection.anchorNode.nodeName != <span class="string">&#x27;#text&#x27;</span>) &#123;</span><br><span class="line">                <span class="comment">// 如果是编辑框范围。则创建表情文本节点进行插入</span></span><br><span class="line">                <span class="keyword">let</span> text = <span class="built_in">document</span>.createTextNode(myValue)</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> (myField.childNodes.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="comment">// 如果文本框的子元素大于0，则表示有其他元素，则按照位置插入表情节点</span></span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; myField.childNodes.length; i++) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (i == selection.anchorOffset) &#123;</span><br><span class="line">                            myField.appendChild(text, myField.childNodes[i])</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">// 否则直接插入一个元素</span></span><br><span class="line">                    myField.appendChild(text)</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 创建新的光标对象</span></span><br><span class="line">                <span class="keyword">let</span> range = <span class="built_in">document</span>.createRange()</span><br><span class="line">                <span class="comment">// 光标对象的范围界定为新建的节点</span></span><br><span class="line">                range.selectNodeContents(text)</span><br><span class="line">                <span class="comment">// 光标位置定位在表情节点的最大长度</span></span><br><span class="line">                range.setStart(text, text.length)</span><br><span class="line">                <span class="comment">// 使光标开始和光标结束重叠</span></span><br><span class="line">                range.collapse(<span class="literal">true</span>)</span><br><span class="line">                <span class="comment">// 清除选定对象的所有光标对象</span></span><br><span class="line">                selection.removeAllRanges()</span><br><span class="line">                <span class="comment">// 插入新的光标对象</span></span><br><span class="line">                selection.addRange(range)</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 如果是文本节点则先获取光标对象</span></span><br><span class="line">                <span class="keyword">let</span> range = selection.getRangeAt(<span class="number">0</span>)</span><br><span class="line">                <span class="comment">// 获取光标对象的范围界定对象，一般就是textNode对象</span></span><br><span class="line">                <span class="keyword">let</span> textNode = range.startContainer;</span><br><span class="line">                <span class="comment">// 获取光标位置</span></span><br><span class="line">                <span class="keyword">let</span> rangeStartOffset = range.startOffset;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 文本节点在光标位置处插入新的内容</span></span><br><span class="line">                textNode.insertData(rangeStartOffset, myValue)</span><br><span class="line">                <span class="comment">// 光标移动到到原来的位置加上新内容的长度</span></span><br><span class="line">                range.setStart(textNode, rangeStartOffset + myValue.length)</span><br><span class="line">                <span class="comment">// 光标开始和光标结束重叠</span></span><br><span class="line">                range.collapse(<span class="literal">true</span>)</span><br><span class="line">                <span class="comment">// 清除选定对象的所有光标对象</span></span><br><span class="line">                <span class="comment">// selection.removeAllRanges()</span></span><br><span class="line">                <span class="comment">// 插入新的光标对象</span></span><br><span class="line">                <span class="comment">// selection.addRange(range)</span></span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="title">test</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> textarea = <span class="built_in">this</span>.$refs.textarea</span><br><span class="line">            <span class="keyword">let</span> str = textarea.innerText            </span><br><span class="line">            <span class="keyword">let</span> formatStr =  <span class="built_in">this</span>.colorKeyword(str)</span><br><span class="line">            textarea.innerHTML = formatStr</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chensw.top/2020/02/27/textarea%E5%85%89%E6%A0%87%E5%A4%84%E6%8F%92%E5%85%A5%E5%80%BC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="琴客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="琴客的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/27/textarea%E5%85%89%E6%A0%87%E5%A4%84%E6%8F%92%E5%85%A5%E5%80%BC/" class="post-title-link" itemprop="url">textarea光标处插入值</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-27 16:24:53" itemprop="dateCreated datePublished" datetime="2020-02-27T16:24:53+08:00">2020-02-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-18 10:22:04" itemprop="dateModified" datetime="2021-03-18T10:22:04+08:00">2021-03-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>有时候需要在文本域主动插入一些文本。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// @params</span></span><br><span class="line"><span class="comment">// myField: textarea的DOM</span></span><br><span class="line"><span class="comment">// myValue: 需要插入的文本</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 光标处插入文本</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertAtCursor</span>(<span class="params">myField, myValue</span>) </span>&#123; </span><br><span class="line">    <span class="comment">//IE 浏览器</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">document</span>.selection) &#123;</span><br><span class="line">        myField.focus();</span><br><span class="line">        sel = <span class="built_in">document</span>.selection.createRange();</span><br><span class="line">        sel.text = myValue;</span><br><span class="line">        sel.select();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//FireFox、Chrome等</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (myField.selectionStart || myField.selectionStart == <span class="string">&#x27;0&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> startPos = myField.selectionStart;</span><br><span class="line">        <span class="keyword">var</span> endPos = myField.selectionEnd;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 保存滚动条</span></span><br><span class="line">        <span class="keyword">var</span> restoreTop = myField.scrollTop;</span><br><span class="line">        myField.value = myField.value.substring(<span class="number">0</span>, startPos) + myValue + myField.value.substring(endPos, myField.value.length);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (restoreTop &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            myField.scrollTop = restoreTop;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        myField.focus();</span><br><span class="line">        myField.selectionStart = startPos + myValue.length;</span><br><span class="line">        myField.selectionEnd = startPos + myValue.length;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        myField.value += myValue;</span><br><span class="line">        myField.focus();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">琴客</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">琴客</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
